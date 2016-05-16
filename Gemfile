@@ -23,11 +23,17 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+###############################################333
+
+# Gems added to the Cappstone project
 gem "omniauth"
 gem "omniauth-google-oauth2"
 
 gem 'pg', '~> 0.15'
+gem 'validates_phone_number'
 
+
+###############################################333
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
