@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dia36odnd
+  api_key: '911544753257251'
+  api_secret: aMmEynozqqQblDviMvoBjnvm-AA
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dia36odnd
+  api_key: '911544753257251'
+  api_secret: aMmEynozqqQblDviMvoBjnvm-AA
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dia36odnd
+  api_key: '911544753257251'
+  api_secret: aMmEynozqqQblDviMvoBjnvm-AA
+  enhance_image_tag: true
+  static_image_support: false

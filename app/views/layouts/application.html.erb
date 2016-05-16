@@ -4,11 +4,49 @@
   <title>Cappstone</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <%= csrf_meta_tags %> 
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 </head>
-<body>
+<body> 
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">ABOUT</a></li>
+          <li><a class="waves-effect waves-light btn">Sign Up</a></li>
+          <li><a class="waves-effect waves-light btn">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-<%= yield %>
-
+  <div class="container">
+  <%= yield %>
+  </div>
+  <footer class="page-footer">
+    <!-- <div class="container"> -->
+<!--       <div class="row">
+        <div class="col l6 s12">
+          <p class="grey-text text-lighten-4"></p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+        </div>
+      </div> -->
+    <!-- </div> -->
+    <div class="footer-copyright">
+      <div class="container">
+        © 2016 App
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
+ 
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>
