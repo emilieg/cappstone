@@ -1,7 +1,30 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.nav-wrapper {
+  background-color: #CC342E;
+}
+
+.btn {
+  background-color: #CC342E;
+}
+
+.pic-box {
+  background-image: cover;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
 
 img {
   width: 100%;
+}
+.index-info {
+  z-index: 1;
+}
+
+
+
+footer {
+  background-color: #CC342E !important;
 }

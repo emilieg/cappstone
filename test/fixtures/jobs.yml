@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  position: MyString
+  department: MyString
+  address: MyString
+  apply_date: MyString
+  job_description_url: MyString
+  relocation: MyString
+  comp_value: MyString
+  comp_type: MyString
+  user_id: 
+  company_id: 
+
+two:
+  position: MyString
+  department: MyString
+  address: MyString
+  apply_date: MyString
+  job_description_url: MyString
+  relocation: MyString
+  comp_value: MyString
+  comp_type: MyString
+  user_id: 
+  company_id: 
