@@ -1,6 +1,24 @@
 .contain {
-  background-color: red;
+  background-color: #CC342E;
   opacity: .7;
   margin: 20%;
   color: white;
+  height: 400px;
+}
+
+.section-main-header {
+  text-align: center;
+}
+
+.job-at-company {
+  margin: -33px 0px 10px 40%;
+  font-size: 30px;
+}
+
+.button {
+  margin: 10px 35%;
+}
+
+body {
+  background-color: #2A363B;
 }
