@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  get 'auth/logout'
+  get 'login' => 'sessions#new'
+  post 'login' => 'session#create'
+  get 'logout' 'sessions#destroy'
 
-  get 'auth/callback'
+  # get 'auth/logout'
 
-  get 'auth/failure'
+  # get 'auth/callback'
+
+  # get 'auth/failure'
 
   root 'main#index'
 
