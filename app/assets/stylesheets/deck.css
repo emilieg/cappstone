@@ -1,0 +1,48 @@
+body {
+  background-color: #2A363B;
+}
+
+.contain {
+  background-color: #CC342E;
+  opacity: .7;
+  margin: 10% 20% 20% 20%;
+  color: white;
+  height: 400px;
+}
+
+.nav {
+  background-color: #CC342E;
+}
+
+.section-main-header {
+  text-align: center;
+}
+
+.job-at-company {
+  margin: -33px 0px 10px 40%;
+  font-size: 30px;
+}
+
+.button {
+  margin: 10px 35%;
+}
+
+/* Reusables */
+.left-float {
+  float: left;
+}
+
+.right-float {
+  float: right;
+}
+
+.section-h3 {
+  margin:0px 0px;
+}
+
+.section-user-info {
+  margin: 0px 0px 20px 0px;
+  font-size: 25px;
+}
+
+
