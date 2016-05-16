@@ -2,11 +2,12 @@ body {
   background-color: #2A363B;
 }
 
-.contain {
+
+.capp-well {
   background-color: #CC342E;
-  opacity: .7;
+  /*opacity: .7;*/
   margin: 10% 20% 20% 20%;
-  color: white;
+  /*color: white;*/
   height: 400px;
 }
 
@@ -16,18 +17,30 @@ body {
 
 .section-main-header {
   text-align: center;
+  margin: 0px;
+  color: white;
 }
 
 .job-at-company {
   margin: -33px 0px 10px 40%;
   font-size: 30px;
+  color: white;
+}
+
+.job-at-company-location {
+  margin-top: 1px;
+  color: white;
 }
 
 .button {
   margin: 10px 35%;
 }
 
-/* Reusables */
+/*.modal-content {
+  background-color: grey;
+}*/
+
+ /*Reusables*/
 .left-float {
   float: left;
 }

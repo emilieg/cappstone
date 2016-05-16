@@ -1,55 +1,67 @@
-  <div class="navbar-fixed">
-    <nav class="nav">
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Logo</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#">ABOUT</a></li>
-          <li><a class="waves-effect waves-light btn">Sign Up</a></li>
-          <li><a class="waves-effect waves-light btn">Login</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="scrollable-section" data-section-title="Company">
-    <section class="contain">
-      <h1 class="section-main-header">Job Title</h1>
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Edit</a>
-      <h2 class="job-at-company">Company</h2>
-       <!-- Modal Trigger -->
-
+<div class="navbar-fixed">
+  <nav class="nav">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">ABOUT</a></li>
+        <li><a class="waves-effect waves-light btn">Sign Up</a></li>
+        <li><a class="waves-effect waves-light btn">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="scrollable-section" data-section-title="Company">
+  <section class="capp-well">
+    <h1 class="section-main-header">Job Title</h1>
+        <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
     <!-- Modal Structure -->
     <div id="modal1" class="modal bottom-sheet">
       <div class="modal-content">
-        <h4>Modal Header</h4>
-        <p>A bunch of text</p>
+        <form class="Company" action="demo_form.asp">
+          Position: <input type="text" name="FirstName" value=""><br>
+          Department: <input type="text" name="LastName" value=""><br>
+          Salary: <input type="text" name="LastName" value=""><br>
+          Benefits: <input type="text" name="LastName" value=""><br>
+          Location: <input type="text" name="LastName" value=""><br>
+          Rating: <input type="text" name="LastName" value=""><br>
+          <input type="submit" value="Submit">
+        </form>
       </div>
       <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
       </div>
     </div>
-    <section class="left-float">
-      <h3 class="section-h3">Position:</h3>
-      <h3 class="section-user-info">Web Developer</h3>
-      <h3 class="section-h3">Department:</h3>
-      <h3 class="section-user-info">Tech</h3>
-      <h3 class="section-h3">Salary:</h3>
-      <h3 class="section-user-info">80k</h3>
-    </section>
-    <section class="right-float">
-      <h3 class="section-h3">Benefits:</h3>
-      <h3 class="section-user-info">Health, Dental, 401K Match</h3>
-      <h3 class="section-h3">Location:</h3>
-      <h3 class="section-user-info">Fremont</h3>
-      <h3 class="section-h3">Rating:</h3>
-      <h3 class="section-user-info">5/5</h3>
+
+
+
+
+
+    <h2 class="job-at-company">Company</h2>
+    <section class="row">
+      <section class="left-float col s6">
+        <h3 class="section-h3">Position:</h3>
+        <h3 class="section-user-info">Web Developer</h3>
+        <h3 class="section-h3">Department:</h3>
+        <h3 class="section-user-info">Tech</h3>
+        <h3 class="section-h3">Salary:</h3>
+        <h3 class="section-user-info">80k</h3>
+      </section>
+      <section class="right-float col s6">
+        <h3 class="section-h3">Benefits:</h3>
+        <h3 class="section-user-info">Health, Dental, 401K Match</h3>
+        <h3 class="section-h3">Location:</h3>
+        <h3 class="section-user-info">Fremont</h3>
+        <h3 class="section-h3">Rating:</h3>
+        <h3 class="section-user-info">5/5</h3>
+      </section>
     </section>
   </section>
 </div>
 <div class="scrollable-section" data-section-title="Contacts">
-  <section class="contain">
+  <section class="cap-well">
     <h1 class="section-main-header">Contacts</h1>
     <h2 class="job-at-company">Company</h2>
-    <a class="button waves-effect waves-light btn">Add Contact</a>
     <div class="container">
     <p class="section-user-info">Contact Name</p>
     <p class="section-user-info">Number</p>
@@ -57,23 +69,25 @@
   </section>
 </div>
 <div class="scrollable-section" data-section-title="Events">
-  <section class="contain">
+  <section class="cap-well">
     <h1 class="section-main-header">Events</h1>
+
+
+
     <h2 class="job-at-company">Job at Company</h2>
-    <a class="button waves-effect waves-light btn">Add Event</a>
   </section>
 </div>
 <div class="scrollable-section" data-section-title="Location">
-  <section class="contain">
+  <section class="cap-well">
     <h1 class="section-main-header">Location</h1>
-    <h2 class="job-at-company">Job at Company</h2>
+    <h2 class="job-at-company job-at-company-location">Job at Company</h2>
   </section>
 </div>
 <div class="scrollable-section" data-section-title="Notes">
-  <section class="contain">
+  <section class="cap-well">
     <h1 class="section-main-header">Notes</h1>
+
     <h2 class="job-at-company">Job at Company</h2>
-    <a class="button waves-effect waves-light btn">Add Note</a>
     <p>text text text</p>
   </section>
 </div>
