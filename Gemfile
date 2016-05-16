@@ -29,9 +29,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "omniauth"
 gem "omniauth-google-oauth2"
 
-gem 'pg', '~> 0.15'
+gem 'pg'
 gem 'validates_phone_number'
 
+gem 'aws-sdk', '~> 2'
+
+gem 'openssl'
 
 ###############################################333
 
