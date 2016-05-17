@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20160516192801) do
   add_index "contacts", ["company_id"], name: "index_contacts_on_company_id", using: :btree
 
   create_table "event_types", force: :cascade do |t|
-    t.string   "type"
+    t.string   "activity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

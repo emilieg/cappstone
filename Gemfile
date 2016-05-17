@@ -34,10 +34,6 @@ gem 'validates_phone_number'
 
 gem 'aws-sdk', '~> 2'
 
-# gem 'openssl'
-
-
-
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
