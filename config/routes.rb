@@ -18,13 +18,9 @@ Rails.application.routes.draw do
   # get 'auth/failure'
 
   get 'deck/show' => 'deck#show'
-
   get 'auth/logout' => 'auth#logout'
-
   get 'auth/failure' => 'auth#failure'
-
   get 'auth/:provider/callback' => 'auth#callback'
-
 
   get 'dashboard' =>'dashboard#show'
 
