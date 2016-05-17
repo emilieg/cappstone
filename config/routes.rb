@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   # get 'auth/failure'
 
-  get 'deck/show' => 'deck#show'
+  get '/deck/:id' => 'deck#show'
 
   get 'deck/new' => 'deck#new'
 
