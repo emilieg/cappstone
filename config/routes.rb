@@ -17,16 +17,15 @@ Rails.application.routes.draw do
 
   # get 'auth/failure'
 
+
   get 'dashboard/deck/:id' => 'deck#show'
 
   get 'dashboard/deck/new' => 'deck#new'
 
+
   get 'auth/logout' => 'auth#logout'
-
   get 'auth/failure' => 'auth#failure'
-
   get 'auth/:provider/callback' => 'auth#callback'
-
 
   get 'dashboard' =>'dashboard#show'
 
