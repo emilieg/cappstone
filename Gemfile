@@ -29,6 +29,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "omniauth"
 gem "omniauth-google-oauth2"
 
+# gem 'signet'
+gem 'google-api-client'
+
 gem 'pg'
 gem 'validates_phone_number'
 
