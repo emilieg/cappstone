@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//*****INDEX PAGE STYLING*****
 .nav-wrapper {
   background-color: #CC342E;
   margin-left: 15px;
@@ -42,8 +43,7 @@
 }
 
 .btn-large.button-index-info {
-  background-color: #CC342E; 
-  
+  background-color: #CC342E;   
 }
 
 img {
@@ -62,6 +62,7 @@ img {
 footer {
   background-color: #CC342E !important;
 }
+//*****INDEX PAGE STYLING ENDS*****
 .progress {
   max-width: 600px;
   margin: 0.2em 0 0.2em 0;
