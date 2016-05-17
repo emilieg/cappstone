@@ -8,6 +8,8 @@
  *  Licensed under MIT
  *
  */
+$(document).ready(function(){
+
 (function ($) {
     'use strict';
     console.log("this is working")
@@ -104,3 +106,5 @@
       return $container;
     };
 }(jQuery));
+
+});

@@ -1,3 +1,4 @@
+<div id="try-this-div">
 <div class="navbar-fixed">
   <nav class="nav">
     <div class="nav-wrapper">
@@ -140,6 +141,17 @@
     <!-- Modal End -->
 
     <h2 class="job-at-company">Job at Company</h2>
-    <p>text text text</p>
+    <p class="notes-p">text text text</p>
   </section>
 </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#try-this-div').sectionScroll();
+    $('.modal-trigger').leanModal();
+    $('.modal-trigger2').leanModal();
+  });
+</script>
+
+
