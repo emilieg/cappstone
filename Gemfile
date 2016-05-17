@@ -34,7 +34,7 @@ gem 'validates_phone_number'
 
 gem 'aws-sdk', '~> 2'
 
-gem 'openssl'
+# gem 'openssl'
 
 ###############################################333
 
