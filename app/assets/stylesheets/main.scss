@@ -1,34 +1,82 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//*****INDEX PAGE STYLING*****
+
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
 .nav-wrapper {
   background-color: #CC342E;
+  margin-left: 15px;
+}
+
+.work-icons {
+  color: white;
 }
 
 .btn {
   background-color: #CC342E;
 }
 
-.pic-box {
-  background-image: cover;
-  width: 100%;
+.background {
+  position: relative;
+}
+
+.pic .background {
+  padding: 0 !important;
+}
+
+.index-info {
   position: absolute;
-  z-index: -1;
+  bottom: 8vw;
+  color: white;
+  background-color: rgba(255,255,255,0.2);
+  font-size: 3vw;
+  margin: 0.5em;
+  text-align: center;
+}
+
+.button-index-info {
+  position: absolute;
+  color: white;
+  font-size: 1vw;
+  text-align: right;
+
+}
+
+.btn-large.button-index-info {
+  background-color: #CC342E;   
 }
 
 img {
   width: 100%;
 }
-.index-info {
-  z-index: 1;
+
+.row .col.s12.index-box {
+  padding-top: 50px;
+}
+
+.index-p {
+  color: white;
+  margin-top:0;
 }
 
 footer {
   background-color: #CC342E !important;
 }
+//*****INDEX PAGE STYLING ENDS
 .progress {
   max-width: 600px;
-  margin:    0.2em 0 0.2em 0;
+  margin: 0.2em 0 0.2em 0;
 }
 
 .progress .bar {
