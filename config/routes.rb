@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   get 'auth/logout'
 
   get 'auth/callback'
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
   get 'auth/failure' => 'auth#failure'
 
   get 'auth/:provider/callback' => 'auth#callback'
+
+  get 'dashboard' =>'dashboard#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
