@@ -1,17 +1,19 @@
-<div id="try-this-div">
-<div class="navbar-fixed">
-  <nav class="nav">
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">ABOUT</a></li>
-        <li><a class="waves-effect waves-light btn">Sign Up</a></li>
-        <li><a class="waves-effect waves-light btn">Login</a></li>
-      </ul>
-    </div>
-  </nav>
-</div>
-<div class="scrollable-section" data-section-title="Company">
+<div id="scroll-it">
+  <div class="navbar-fixed">
+    <nav class="nav">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">ABOUT</a></li>
+          <li><a class="waves-effect waves-light btn">Sign Up</a></li>
+          <li><a class="waves-effect waves-light btn">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- Company Section -->
+  <div class="scrollable-section" data-section-title="Company">
+  </div>
   <section class="capp-well">
     <h1 class="section-main-header">Job Title</h1>
     <!-- Modal Trigger -->
@@ -56,13 +58,12 @@
       </section>
     </section>
   </section>
-</div>
-<div class="scrollable-section" data-section-title="Contacts">
+  <!-- Contacts Section -->
+  <div class="scrollable-section" data-section-title="Contacts">
+  </div>
   <section class="capp-well">
     <h1 class="section-main-header">Contacts</h1>
-
-
-<!-- Modal Trigger -->
+    <!-- Modal Trigger -->
     <a class="waves-effect waves-light btn modal-trigger2" href="#modal2">Add Contact</a>
     <!-- Modal Structure -->
     <div id="modal2" class="modal">
@@ -79,20 +80,17 @@
       </div>
     </div>
     <!-- Modal End -->
-
-
     <h2 class="job-at-company">Company</h2>
     <div class="container">
     <p class="section-user-info">Contact Name</p>
     <p class="section-user-info">Number</p>
     <p class="section-user-info">Email</p>
   </section>
-</div>
-<div class="scrollable-section" data-section-title="Events">
+  <!-- Events -->
+  <div class="scrollable-section" data-section-title="Events">
+  <div>
   <section class="capp-well">
     <h1 class="section-main-header">Events</h1>
-
-
     <!-- Modal Trigger -->
     <a class="waves-effect waves-light btn modal-trigger2" href="#modal3">Add Event</a>
     <!-- Modal Structure -->
@@ -112,43 +110,45 @@
 
     <h2 class="job-at-company">Job at Company</h2>
   </section>
-</div>
-<div class="scrollable-section" data-section-title="Location">
-  <section class="capp-well">
-    <h1 class="section-main-header">Location</h1>
-    <h2 class="job-at-company job-at-company-location">Job at Company</h2>
-  </section>
-</div>
-<div class="scrollable-section" data-section-title="Notes">
-  <section class="capp-well">
-    <h1 class="section-main-header">Notes</h1>
 
-    <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger2" href="#modal3">Add Note</a>
-    <!-- Modal Structure -->
-    <div id="modal3" class="modal">
-      <div class="modal-content">
-        <form class="Company" action="demo_form.asp">
-          Date: <input type="text" name="FirstName" value=""><br>
-          Note: <input type="text" name="FirstName" value=""><br>
-          <input type="submit" value="Submit">
-        </form>
+  <!-- Location -->
+  <div class="scrollable-section" data-section-title="Location">
+  </div>
+    <section class="capp-well">
+      <h1 class="section-main-header">Location</h1>
+      <h2 class="job-at-company job-at-company-location">Job at Company</h2>
+    </section>
+  <!-- Notes -->
+  <div class="scrollable-section" data-section-title="Notes">
+  </div>
+    <section class="capp-well">
+      <h1 class="section-main-header">Notes</h1>
+
+      <!-- Modal Trigger -->
+      <a class="waves-effect waves-light btn modal-trigger2" href="#modal3">Add Note</a>
+      <!-- Modal Structure -->
+      <div id="modal3" class="modal">
+        <div class="modal-content">
+          <form class="Company" action="demo_form.asp">
+            Date: <input type="text" name="FirstName" value=""><br>
+            Note: <input type="text" name="FirstName" value=""><br>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
       </div>
-      <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-      </div>
-    </div>
-    <!-- Modal End -->
+      <!-- Modal End -->
 
-    <h2 class="job-at-company">Job at Company</h2>
-    <p class="notes-p">text text text</p>
-  </section>
-</div>
-</div>
+      <h2 class="job-at-company">Job at Company</h2>
+      <p class="notes-p">text text text</p>
+    </section>
 
+</div>
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#try-this-div').sectionScroll();
+    $('#scroll-it').sectionScroll();
     $('.modal-trigger').leanModal();
     $('.modal-trigger2').leanModal();
   });

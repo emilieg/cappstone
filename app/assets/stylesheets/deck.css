@@ -46,6 +46,10 @@ body {
 }*/
 
  /*Reusables*/
+.scrollable-section {
+  height: 5px;
+}
+
 .left-float {
   float: left;
 }
