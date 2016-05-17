@@ -26,6 +26,10 @@ body {
   border: white solid;
 }
 
+.capp-well-new {
+  height: 80%;
+}
+
 .nav {
   background-color: #CC342E;
 }

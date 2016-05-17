@@ -17,9 +17,12 @@ Rails.application.routes.draw do
 
   # get 'auth/failure'
 
-  get '/deck/:id' => 'deck#show'
 
-  get 'deck/new' => 'deck#new'
+  post 'deck/new' => 'deck#new'
+
+  get 'deck/new' => 'deck'
+
+  get '/deck' => 'deck#show'
 
   get 'auth/logout' => 'auth#logout'
 
