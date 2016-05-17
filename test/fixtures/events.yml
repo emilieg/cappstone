@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  address: MyString
+  event_timestamp: MyString
+  job_id: 
+
+two:
+  title: MyString
+  description: MyString
+  address: MyString
+  event_timestamp: MyString
+  job_id: 

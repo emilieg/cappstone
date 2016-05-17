@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516182641) do
+ActiveRecord::Schema.define(version: 20160516192801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,39 @@ ActiveRecord::Schema.define(version: 20160516182641) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "title"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "linkedin"
+    t.integer  "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "contacts", ["company_id"], name: "index_contacts_on_company_id", using: :btree
+
+  create_table "event_types", force: :cascade do |t|
+    t.string   "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "address"
+    t.string   "event_timestamp"
+    t.integer  "event_type_id"
+    t.integer  "job_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "events", ["event_type_id"], name: "index_events_on_event_type_id", using: :btree
+  add_index "events", ["job_id"], name: "index_events_on_job_id", using: :btree
 
   create_table "jobs", force: :cascade do |t|
     t.string   "position"
@@ -43,6 +76,16 @@ ActiveRecord::Schema.define(version: 20160516182641) do
   add_index "jobs", ["company_id"], name: "index_jobs_on_company_id", using: :btree
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
 
+  create_table "notes", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "notes", ["job_id"], name: "index_notes_on_job_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "provider"
     t.string   "provider_id"
@@ -53,6 +96,10 @@ ActiveRecord::Schema.define(version: 20160516182641) do
     t.datetime "updated_at",    null: false
   end
 
+  add_foreign_key "contacts", "companies"
+  add_foreign_key "events", "event_types"
+  add_foreign_key "events", "jobs"
   add_foreign_key "jobs", "companies"
   add_foreign_key "jobs", "users"
+  add_foreign_key "notes", "jobs"
 end

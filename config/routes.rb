@@ -1,11 +1,21 @@
 Rails.application.routes.draw do
+  
   get 'auth/logout'
 
-  get 'auth/callback'
-
-  get 'auth/failure'
-
   root 'main#index'
+
+  get 'signup' => 'user#new'
+  get 'signup' => 'user#create'
+
+  get 'login' => 'sessions#new'
+  post 'login' => 'session#create'
+  get 'logout' => 'sessions#destroy'
+
+  # get 'auth/logout'
+
+  # get 'auth/callback'
+
+  # get 'auth/failure'
 
   get 'deck/show' => 'deck#show'
 
@@ -14,6 +24,12 @@ Rails.application.routes.draw do
   get 'auth/failure' => 'auth#failure'
 
   get 'auth/:provider/callback' => 'auth#callback'
+
+
+  get 'dashboard' =>'dashboard#show'
+
+
+  get 'upload_test' => 'main#upload_test'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
