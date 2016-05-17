@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'user/new'
 
-  get 'user/create'
+  root 'main#index'
+
+  get 'signup' => 'user#new'
+  get 'signup' => 'user#create'
 
   get 'login' => 'sessions#new'
   post 'login' => 'session#create'
@@ -12,8 +14,6 @@ Rails.application.routes.draw do
   # get 'auth/callback'
 
   # get 'auth/failure'
-
-  root 'main#index'
 
   get 'deck/show' => 'deck#show'
 
