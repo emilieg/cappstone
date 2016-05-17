@@ -1,8 +1,14 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .nav-wrapper {
   background-color: #CC342E;
+  margin-left: 15px;
+}
+
+.work-icons {
+  color: white;
 }
 
 .btn {
@@ -16,33 +22,41 @@
 .pic .background {
   padding: 0 !important;
 }
+
 .index-info {
   position: absolute;
-  bottom: 0px;
+  bottom: 8vw;
   color: white;
   background-color: rgba(255,255,255,0.2);
   font-size: 3vw;
   margin: 0.5em;
+  text-align: center;
 }
 
 .button-index-info {
   position: absolute;
-  bottom: 6vw;
   color: white;
   font-size: 1vw;
   text-align: right;
+
 }
 
+.btn-large.button-index-info {
+  background-color: #CC342E; 
+  
+}
 
 img {
   width: 100%;
 }
-.index-info {
-  z-index: 1;
+
+.row .col.s12.index-box {
+  padding-top: 50px;
 }
 
-p {
+.index-p {
   color: white;
+  margin-top:0;
 }
 
 footer {
@@ -50,7 +64,7 @@ footer {
 }
 .progress {
   max-width: 600px;
-  margin:    0.2em 0 0.2em 0;
+  margin: 0.2em 0 0.2em 0;
 }
 
 .progress .bar {
