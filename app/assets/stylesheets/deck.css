@@ -26,6 +26,7 @@ body {
 
 .section-main-header {
   text-align: center;
+  font-family: righteous;
   margin: 0px;
   color: red;
 }
@@ -38,7 +39,7 @@ body {
 
 .job-at-company-location {
   margin-top: 1px;
-  color: white;
+  color: red;
 }
 
 .button {
