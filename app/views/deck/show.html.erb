@@ -1,4 +1,4 @@
-<div id="scroll-it">
+<div id="scroll-it" class="color-layer">
   <div class="navbar-fixed">
     <nav class="nav">
       <div class="nav-wrapper">
@@ -15,21 +15,42 @@
   <div class="scrollable-section" data-section-title="Company">
   </div>
   <section class="capp-well">
-    <h1 class="section-main-header">Company</h1>
+    <h1 class="section-main-header">Opportunity</h1>
     <!-- Modal Trigger -->
     <a class="waves-effect waves-light btn modal-trigger edit-button-style" href="#modal1">Edit</a>
     <!-- Modal Structure -->
     <div id="modal1" class="modal bottom-sheet">
       <div class="modal-content">
         <form class="Company" action="demo_form.asp">
-          Job Title: <input type="text" name="FirstName" value=""><br>
-          Company: <input type="text" name="FirstName" value=""><br>
           Position: <input type="text" name="FirstName" value=""><br>
+          Application Date: <input type="text" name="FirstName" value=""><br>
+          Job Description URL: <input type="text" name="LastName" value=""><br>
+          Company: <input type="text" name="LastName" value=""><br>
           Department: <input type="text" name="LastName" value=""><br>
-          Salary: <input type="text" name="LastName" value=""><br>
-          Benefits: <input type="text" name="LastName" value=""><br>
-          Location: <input type="text" name="LastName" value=""><br>
-          Rating: <input type="text" name="LastName" value=""><br>
+          Address: <input type="text" name="LastName" value=""><br>
+          Salary Amount: <input type="text" name="LastName" value=""><br>
+          Salary Type: <input type="text" name="LastName" value=""><br>
+          <p>
+            <input name="salary" type="radio" id="annual" />
+            <label for="annual">Annual</label>
+          </p>
+          <p>
+            <input name="salary" type="radio" id="hourly" />
+            <label for="hourly">Hourly</label>
+          </p>
+          <p>
+            <input name="salary" type="radio" id="monthly" />
+            <label for="monthly">Monthly</label>
+          </p>
+          Relocation Required:
+          <p>
+            <input name="relo" type="radio" id="test1" />
+            <label for="test1">Yes</label>
+          </p>
+          <p>
+            <input name="relo" type="radio" id="test2" />
+            <label for="test2">No</label>
+          </p>
           <input type="submit" value="Submit">
         </form>
       </div>

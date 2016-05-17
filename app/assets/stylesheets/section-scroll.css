@@ -20,14 +20,15 @@
 .section-bullets li {
     display: block;
     text-align: right;
-    font-size: 13px;
+    /*font-size: 13px;*/
     text-transform: uppercase;
-    line-height: 1;
+    /*line-height: 1;*/
     position: relative;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     cursor: pointer;
     margin-bottom: 1px;
+
 }
 
 .section-bullets li a:before {
@@ -56,7 +57,7 @@
 }
 
 .section-bullets li a {
-    color: #000;
+    color: red;
     overflow: hidden;
     position: relative;
     display: inline-block;
