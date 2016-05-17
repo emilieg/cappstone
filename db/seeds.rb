@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 User.create('name'=> 'Emilie Gerber', 'email'=> 'emiliegerberharris@gmail.com')
 
 User.create('name'=> 'Drew Rudebusch', 'email'=> 'drewrudebusch@gmail.com')
@@ -26,3 +25,5 @@ EventType.create('activity'=> 'In-person Interview')
 Event.create('title'=> 'Phone interview', 'description'=> 'Preliminary Interview with Susie Johnson', 'event_timestamp'=> '2016-05-19 09=>30=>00AM', event_type_id: 1, job_id: 1)
 
 Note.create('title'=> 'Similar background', 'content'=> 'Susie also went to UW. She graduated from the CS program.', job_id: 1)
+
+#job is deck

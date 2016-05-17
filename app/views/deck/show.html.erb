@@ -1,4 +1,4 @@
-<div id="scroll-it">
+<div id="scroll-it" class="color-layer">
   <div class="navbar-fixed">
     <nav class="nav">
       <div class="nav-wrapper">
@@ -15,21 +15,42 @@
   <div class="scrollable-section" data-section-title="Company">
   </div>
   <section class="capp-well">
-    <h1 class="section-main-header">Company</h1>
+    <h1 class="section-main-header">Opportunity</h1>
     <!-- Modal Trigger -->
     <a class="waves-effect waves-light btn modal-trigger edit-button-style" href="#modal1">Edit</a>
     <!-- Modal Structure -->
     <div id="modal1" class="modal bottom-sheet">
       <div class="modal-content">
         <form class="Company" action="demo_form.asp">
-          Job Title: <input type="text" name="FirstName" value=""><br>
-          Company: <input type="text" name="FirstName" value=""><br>
-          Position: <input type="text" name="FirstName" value=""><br>
-          Department: <input type="text" name="LastName" value=""><br>
-          Salary: <input type="text" name="LastName" value=""><br>
-          Benefits: <input type="text" name="LastName" value=""><br>
-          Location: <input type="text" name="LastName" value=""><br>
-          Rating: <input type="text" name="LastName" value=""><br>
+          Position: <input type="text" name="position" value=""><br>
+          Application Date: <input type="text" name="application-date" value=""><br>
+          Job Description URL: <input type="text" name="job-description" value=""><br>
+          Company: <input type="text" name="company" value=""><br>
+          Department: <input type="text" name="department" value=""><br>
+          Address: <input type="text" name="address" value=""><br>
+          Salary Amount: <input type="text" name="salary-amount" value=""><br>
+          Salary Type: <input type="text" name="salary-type" value=""><br>
+          <p>
+            <input name="salary" type="radio" id="annual" />
+            <label for="annual">Annual</label>
+          </p>
+          <p>
+            <input name="salary" type="radio" id="hourly" />
+            <label for="hourly">Hourly</label>
+          </p>
+          <p>
+            <input name="salary" type="radio" id="monthly" />
+            <label for="monthly">Monthly</label>
+          </p>
+          Relocation Required:
+          <p>
+            <input name="relo" type="radio" id="relo-yes" />
+            <label for="relo-yes">Yes</label>
+          </p>
+          <p>
+            <input name="relo" type="radio" id="relo-no" />
+            <label for="relo-no">No</label>
+          </p>
           <input type="submit" value="Submit">
         </form>
       </div>
@@ -38,7 +59,6 @@
       </div>
     </div>
     <!-- Modal End -->
-
     <section class="row">
       <section class="left-float col s6">
         <h3 class="section-h3">Position:</h3>
@@ -64,14 +84,14 @@
   <section class="capp-well">
     <h1 class="section-main-header">Contacts</h1>
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger2" href="#modal2">Add Contact</a>
+    <a class="waves-effect waves-light btn modal-trigger2 edit-button-style" href="#modal2">Add Contact</a>
     <!-- Modal Structure -->
     <div id="modal2" class="modal">
       <div class="modal-content">
         <form class="Company" action="demo_form.asp">
-          Name: <input type="text" name="FirstName" value=""><br>
-          Number: <input type="text" name="FirstName" value=""><br>
-          EMail: <input type="text" name="FirstName" value=""><br>
+          Name: <input type="text" name="name" value=""><br>
+          Number: <input type="text" name="number" value=""><br>
+          EMail: <input type="text" name="email" value=""><br>
           <input type="submit" value="Submit">
         </form>
       </div>
@@ -92,13 +112,13 @@
   <section class="capp-well">
     <h1 class="section-main-header">Events</h1>
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger2" href="#modal3">Add Event</a>
+    <a class="waves-effect waves-light btn modal-trigger2 edit-button-style" href="#modal3">Add Event</a>
     <!-- Modal Structure -->
     <div id="modal3" class="modal">
       <div class="modal-content">
         <form class="Company" action="demo_form.asp">
-          Date: <input type="text" name="FirstName" value=""><br>
-          Event: <input type="text" name="FirstName" value=""><br>
+          Date: <input type="text" name="date" value=""><br>
+          Event: <input type="text" name="event" value=""><br>
           <input type="submit" value="Submit">
         </form>
       </div>
@@ -109,7 +129,6 @@
     <!-- Modal End -->
     <h2 class="job-at-company">Job at Company</h2>
   </section>
-
   <!-- Location -->
   <div class="scrollable-section" data-section-title="Location">
   </div>
@@ -123,13 +142,13 @@
   <section class="capp-well">
     <h1 class="section-main-header">Notes</h1>
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger2" href="#modal3">Add Note</a>
+    <a class="waves-effect waves-light btn modal-trigger2 edit-button-style" href="#modal3">Add Note</a>
     <!-- Modal Structure -->
     <div id="modal3" class="modal">
       <div class="modal-content">
         <form class="Company" action="demo_form.asp">
-          Date: <input type="text" name="FirstName" value=""><br>
-          Note: <input type="text" name="FirstName" value=""><br>
+          Date: <input type="text" name="date" value=""><br>
+          Note: <input type="text" name="note" value=""><br>
           <input type="submit" value="Submit">
         </form>
       </div>

@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  
+
   get 'auth/logout'
 
   root 'main#index'
 
   get 'signup' => 'user#new'
-  get 'signup' => 'user#create'
+  post 'signup' => 'user#create'
 
   get 'login' => 'sessions#new'
   post 'login' => 'session#create'
@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   # get 'auth/failure'
 
   get 'deck/show' => 'deck#show'
+  get '/deck/:id' => 'deck#show'
+  get 'deck/new' => 'deck#new'
+
   get 'auth/logout' => 'auth#logout'
   get 'auth/failure' => 'auth#failure'
   get 'auth/:provider/callback' => 'auth#callback'
