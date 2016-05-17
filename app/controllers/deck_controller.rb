@@ -16,4 +16,8 @@ class DeckController < ApplicationController
     params.require(:job).permit(:job_position,:company_name, :user_id, :event_type, :event_title, :note_id)
   end
 
+
+  def new
+  end
+
 end

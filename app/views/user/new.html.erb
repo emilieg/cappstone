@@ -1,5 +1,5 @@
 <div class="row">
-    <form class="col s4 offset-s4">
+
       <h1>Signup</h1>
 
   <%= form_for :user, :html => {:class =>'input-field col s6'} do |f| %>
@@ -15,10 +15,10 @@
   
 	<%= f.password_field :password_confirmation %>
   <%= label_tag( "Confirm your password")%>
-  </div>
+
   <div class="col s4 offset-s6 login-btn">
   <%= f.submit 'Login', :class => 'btn waves-effect waves-light'%>
   </div>
 <% end %>
-</form>
+
 </div>

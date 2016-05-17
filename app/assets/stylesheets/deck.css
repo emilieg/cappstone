@@ -5,14 +5,20 @@
 
 body {
   background-color: #2A363B;
+ /* background-image: url('http://i694.photobucket.com/albums/vv309/pacalabre/photo-1432938248656-5be4e442a2ea.jpg');
+
+  background-attachment: fixed;*/
+}
+
+.color-layer {
+  background-color: #2A363B;
+
+
 }
 
 .capp-well {
   background-color: #CC342E;
   background-color: white;
-  /*background-color: #FECEA8;*/
-  /*background-color: #E84A5F;*/
-  /*background-color: #99B898;*/
   margin: 10% 20% 20% 20%;
   color: red;
   height: 400px;
@@ -58,6 +64,7 @@ body {
  /*Reusables*/
 .edit-button-style {
   margin-left: 15px;
+  margin-top: -80px;
 }
 
 .scrollable-section {
