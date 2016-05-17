@@ -1,8 +1,16 @@
-<h1>Login</h1>
-
-<%= form_for :user do |f| %>
-	<%= f.email_field :email %>
-	<%= f.password_field :password %>
-
-	
-<% end %>
+<div class="row">
+    <form class="col s4 offset-s4">
+      <h1>Login</h1>
+        <div class="row">
+          <%= form_for :user, :html => {:class =>'input-field col s6'} do |f| %>
+          <%= f.email_field :email %>
+          <%= label_tag( "Enter your email")%>
+          <%= f.password_field :password %>	
+          <%= label_tag( "Enter your password")%>
+        </div>
+      <div class="col s4 offset-s4 login-btn">
+        <%= f.submit 'Login', :class => 'btn waves-effect waves-light'%>
+      </div>
+          <% end %>
+    </form>
+</div>

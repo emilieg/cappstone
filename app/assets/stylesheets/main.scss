@@ -3,6 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //*****INDEX PAGE STYLING*****
+
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
 .nav-wrapper {
   background-color: #CC342E;
   margin-left: 15px;
@@ -62,7 +73,7 @@ img {
 footer {
   background-color: #CC342E !important;
 }
-//*****INDEX PAGE STYLING ENDS*****
+//*****INDEX PAGE STYLING ENDS
 .progress {
   max-width: 600px;
   margin: 0.2em 0 0.2em 0;
