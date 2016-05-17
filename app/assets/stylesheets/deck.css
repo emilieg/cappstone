@@ -67,6 +67,7 @@ body {
  /*Reusables*/
 .edit-button-style {
   margin-left: 15px;
+  margin-top: -80px;
 }
 
 .scrollable-section {
