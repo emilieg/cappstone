@@ -7,15 +7,9 @@ Rails.application.routes.draw do
   get 'signup' => 'user#new'
   post 'signup' => 'user#create'
 
-  get 'login' => 'sessions#new'
-  post 'login' => 'session#create'
-  get 'logout' => 'sessions#destroy'
-
-  # get 'auth/logout'
-
-  # get 'auth/callback'
-
-  # get 'auth/failure'
+  # get 'login' => 'sessions#new'
+  # post 'login' => 'session#create'
+  # get 'logout' => 'sessions#destroy'
 
 
   get 'dashboard/deck/:id' => 'deck#show'
@@ -23,9 +17,10 @@ Rails.application.routes.draw do
   get 'dashboard/deck/new' => 'deck#new'
 
 
+  get 'auth/login' => 'auth#login'
   get 'auth/logout' => 'auth#logout'
   get 'auth/failure' => 'auth#failure'
-  get 'auth/:provider/callback' => 'auth#callback'
+  post 'auth/callback' => 'auth#callback'
 
   get 'dashboard' =>'dashboard#show'
 

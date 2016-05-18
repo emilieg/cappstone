@@ -1,29 +1,40 @@
 class AuthController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:callback]
+
   def logout
   	session[:user_id] = nil
-  	redirect_to root_path
+
+    return '200'
+  	# redirect_to root_path
   end
 
   def failure
   	render plain: "Auth failed"
   end
 
+  def login
+
+  end
+
   def callback
-  	# get user info from auth provider
-  	provider_user = request.env['omniauth.auth']
-    puts provider_user
+    puts 'successfully made it to callback action'
+    data = params
 
-  	# # save the information to our database
-  	# user = User.find_or_create_by(provider_id: provider_user[:uid], provider: params[:provider]) do |u|
-  	# 	u.provider_hash = provider_user['credentials']['token']
-  	# 	u.name = provider_user['info']['name']
-  	# 	u.email = provider_user['info']['name']
-  	# end
+      puts 'data:'
+      puts data
 
-  	# #attach a user id to the current session
-  	# session[:user_id] = user.id
+  	user = User.find_or_create_by(provider_id: data[:user_id], provider: data[:provider]) do |u|
+  		u.provider_hash = data[:provider_hash]
+  		u.name = data[:name]
+  		u.email = data[:email]
+  	end
 
-  	# # redirect the user to the hompage
-  	redirect_to root_path
+  	#attach a user id to the current session
+  	session[:user_id] = user.id
+    @current_user = user
+
+  	# redirect the user to the hompage
+    return '200'
+
   end
 end
