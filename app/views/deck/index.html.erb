@@ -1,22 +1,16 @@
-<!-- <form class = "capp-well capp-well-new" action="deck/new" method="post"> -->
 <%= form_tag( "/deck", method: "post") do %>
   <h2>Position:</h2>
-  <!-- <input type="text" name="position" value=""> -->
   <%= text_field_tag (:position)%>
   <h2>Application Date</h2>
-  <!-- <input type="text" name="application-date" value=""> -->
   <%= text_field_tag (:apply_date)%>
   <h2>Job Description URL</h2>
- <!--  <input type="text" name="job-description" value=""> -->
   <%= text_field_tag (:job_description_url)%>
   <h2>Company</h2>
-  <!-- <input type="text" name="company" value=""> -->
-
   <h2>Department</h2>
-  <!-- <input type="text" name="department" value=""> -->
   <%= text_field_tag (:department)%>
+  <h2>Address</h2>
+  <%= text_field_tag (:address)%>
   <h2>Salary Amount</h2>
-  <!-- <input type="text" name="salary-amount" value=""> -->
   <%= text_field_tag (:comp_value)%>
     <p>
       <input name="salary" type="radio" id="annual" />
@@ -42,23 +36,17 @@
   <input>
   <h2>Contacts</h2>
   <h5>Contact 1:</h5>
-    Name: <!-- <input type="text" name="name" value=""> -->
-
-    Number: <!-- <input type="text" name="number" value=""> -->
-
-    Email: <!-- <input type="text" name="email" value=""> -->
-
+    Name: <%= text_field_tag (:name)%>
+    Number: <%= text_field_tag (:phone)%>
+    Email: <%= text_field_tag (:email)%>
+  <!-- Right now only one contact imports -->
   <h5>Contact 2:</h5>
-    Name: <!-- <input type="text" name="name" value=""> -->
-
-    Number: <!-- <input type="text" name="number" value=""> -->
-
-    Email: <!-- <input type="text" name="email" value=""> -->
-
+    Name: <%= text_field_tag (:name)%>
+    Number: <%= text_field_tag (:phone)%>
+    Email: <%= text_field_tag (:email)%>
   <h2>Notes</h2>
-  <<!-- input type="text" name="note" value=""> -->
-
-
+  <%= text_field_tag (:title)%>
+  <%= text_field_tag (:content)%>
   <button type="submit">Submit</button>
 <!-- </form> -->
 <% end %>
