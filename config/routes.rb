@@ -7,19 +7,10 @@ Rails.application.routes.draw do
   get 'signup' => 'user#new'
   post 'signup' => 'user#create'
 
-  # get 'login' => 'sessions#new'
-  # post 'login' => 'session#create'
-  # get 'logout' => 'sessions#destroy'
-
-
   get 'dashboard/deck/:id' => 'deck#show'
-
   get 'dashboard/deck/new' => 'deck#new'
-
   get 'deck/new' => 'deck'
-
   post 'deck/new' => 'deck#new'
-
   get '/deck' => 'deck#show'
 
   get 'auth/login' => 'auth#login'
@@ -28,7 +19,6 @@ Rails.application.routes.draw do
   post 'auth/callback' => 'auth#callback'
 
   get 'dashboard' =>'dashboard#show'
-
 
   get 'upload_test' => 'main#upload_test'
 
