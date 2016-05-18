@@ -24,6 +24,7 @@ body {
   height: 400px;
   font-family: Oswald;
   border: white solid;
+  overflow: scroll;
 }
 
 .capp-well-new {

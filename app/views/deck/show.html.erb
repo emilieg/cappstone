@@ -19,10 +19,10 @@
     <!-- Modal Trigger -->
     <a class="waves-effect waves-light btn modal-trigger edit-button-style" href="#modal1">Edit</a>
     <!-- Modal Structure -->
-    <div id="modal1" class="modal bottom-sheet">
+    <div id="modal1" class="modal ">
       <div class="modal-content">
-        <form class="Company" action="demo_form.asp">
-          Position: <input type="text" name="position" value=""><br>
+        <form class="Company" action="">
+          Position: <input type="text" name="position" placeholder="front end dev" value=""><br>
           Application Date: <input type="text" name="application-date" value=""><br>
           Job Description URL: <input type="text" name="job-description" value=""><br>
           Company: <input type="text" name="company" value=""><br>
@@ -62,19 +62,53 @@
     <section class="row">
       <section class="left-float col s6">
         <h3 class="section-h3">Position:</h3>
-        <h3 class="section-user-info">Web Developer</h3>
-        <h3 class="section-h3">Department:</h3>
-        <h3 class="section-user-info">Tech</h3>
-        <h3 class="section-h3">Salary:</h3>
-        <h3 class="section-user-info">80k</h3>
+        <h3 class="section-user-info">
+          <% @jobs.each do |job| %>
+            <%= job.position %>
+          <% end %>
+        <h3 class="section-h3">Application Date:</h3>
+        <h3 class="section-user-info">
+          <% @jobs.each do |job| %>
+            <%= job.apply_date %>
+          <% end %>
+        </h3>
+        <h3 class="section-h3">Job Description URL:</h3>
+        <h3 class="section-user-info">
+          <% @jobs.each do |job| %>
+            <%= job.job_description_url %>
+          <% end %>
+        </h3>
+        <h3 class="section-h3">Company:</h3>
+        <h3 class="section-user-info">
+
+        </h3>
       </section>
       <section class="right-float col s6">
-        <h3 class="section-h3">Benefits:</h3>
-        <h3 class="section-user-info">Health, Dental, 401K Match</h3>
-        <h3 class="section-h3">Location:</h3>
-        <h3 class="section-user-info">Fremont</h3>
-        <h3 class="section-h3">Rating:</h3>
-        <h3 class="section-user-info">5/5</h3>
+
+        <h3 class="section-h3">Department:</h3>
+        <h3 class="section-user-info">
+          <% @jobs.each do |job| %>
+            <%= job.department %>
+          <% end %>
+        </h3>
+        <h3 class="section-h3">Address:</h3>
+        <h3 class="section-user-info">
+          <% @jobs.each do |job| %>
+            <%= job.address %>
+          <% end %>
+        </h3>
+        <h3 class="section-h3">Salary:</h3>
+        <h3 class="section-user-info">
+          <% @jobs.each do |job| %>
+            <%= job.comp_value %>
+          <% end %>
+        </h3>
+        <h3 class="section-h3">Relocation:</h3>
+        <h3 class="section-user-info">
+          <% @jobs.each do |job| %>
+            <%= job.relocation %>
+          <% end %>
+        </h3>
       </section>
     </section>
   </section>
@@ -102,9 +136,13 @@
     <!-- Modal End -->
     <h2 class="job-at-company">Job at Company</h2>
     <div class="container">
-    <p class="section-user-info">Contact Name</p>
-    <p class="section-user-info">Number</p>
-    <p class="section-user-info">Email</p>
+    <p class="section-user-info">
+      <% @contacts.each do |contact| %>
+        <%= contact.name %>
+        <%= contact.phone %>
+        <%= contact.email %>
+      <% end %>
+    </p>
   </section>
   <!-- Events -->
   <div class="scrollable-section" data-section-title="Events">
@@ -128,6 +166,13 @@
     </div>
     <!-- Modal End -->
     <h2 class="job-at-company">Job at Company</h2>
+    <p class="section-user-info">
+      <% @events.each do |event| %>
+        <%= event.title %>
+        <%= event.description %>
+        <%= event.address %>
+      <% end %>
+    </p>
   </section>
   <!-- Location -->
   <div class="scrollable-section" data-section-title="Location">
@@ -135,6 +180,7 @@
   <section class="capp-well">
     <h1 class="section-main-header">Location</h1>
     <h2 class="job-at-company job-at-company-location">Job at Company</h2>
+
   </section>
   <!-- Notes -->
   <div class="scrollable-section" data-section-title="Notes">
@@ -155,10 +201,17 @@
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
       </div>
     </div>
+
     <!-- Modal End -->
 
     <h2 class="job-at-company">Job at Company</h2>
-    <p class="notes-p">text text text</p>
+    <p class="notes-p">
+
+      <% @note.each do |note| %>
+        <%= note.content %>
+      <% end %>
+
+    </p>
   </section>
 </div>
 <script type="text/javascript">

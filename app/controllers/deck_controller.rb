@@ -6,9 +6,11 @@ class DeckController < ApplicationController
     @jobs = Job.all
     #if user id matches the user id on session and job
     # @company = Company.all
-    # @event = Event.all
+
+    @events = Event.all
     # @event_type = EventType.all
-    # @note = Note.all
+    @contacts = Contact.all
+    @note = Note.all
   end
 
   def new
