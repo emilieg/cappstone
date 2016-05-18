@@ -11,10 +11,10 @@
 
 $(document).ready(function() {
     $('#calendar').fullCalendar({
-        googleCalendarApiKey: '<YOUR API KEY>',
+        googleCalendarApiKey: 'AIzaSyCGSVbTQQsnkYvE0OzEOVk-fxsc3HX7aKQ',
         events: {
-            googleCalendarId: 'abcd1234@group.calendar.google.com',
-            className: 'gcal-event' // an option!
+            googleCalendarId: 'emilie.gerber.harris@gmail.com',
+            // className: 'gcal-event' // an option!
         },
         
     });
