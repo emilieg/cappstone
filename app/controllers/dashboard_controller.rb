@@ -3,6 +3,8 @@ class DashboardController < ApplicationController
   #future: remove old jobs from this list (make inactive?)
   # before_action :is_authenticated?
   
+
+
   def show
     @jobs = Job.all
     @job = Job.where(user_id: 2) 

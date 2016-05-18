@@ -1,41 +1,45 @@
-  <div class="navbar-fixed">
-    <nav class="nav">
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Dashboard</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="/signup" class="waves-effect waves-light btn">Sign Up</a></li>
-          <li><a href="https://www.google.com/" class="waves-effect waves-light btn">Login</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+<div class="navbar-fixed">
+  <nav class="nav">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Dashboard</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/signup" class="waves-effect waves-light btn">Sign Up</a></li>
+        <li><a href="https://www.google.com/" class="waves-effect waves-light btn">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
 <div class="container">  
   <div class="row">
-
     <div class="col s6">
-      <div class="calendar z-depth-4">THIS IS A CALENDAR</div>
-      </div>
-  </div>
-<div class="row">  
-  <div class="col s12">      
-    <div class="collection">
-      <% @job.each do |job| %>
-      <% @company.each do |company|  %>
-      <a href="/deck" class="collection-item"><%= job.position %> <%= company.name %></a>
-      <% end %>
-      <% end %>
     </div>
   </div>
-</div> 
-<div class="row">
-  <div class="col s12">
-    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a> 
+
+  <div class="row">  
+    <div class="col s12">      
+      <div class="collection">
+        <% @job.each do |job| %>
+        <% @company.each do |company|  %>
+        <a href="/deck" class="collection-item"><%= job.position %> <%= company.name %></a>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div> 
+  <div class="row">
+    <div class="col s12">
+      <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a> 
+    </div>
   </div>
+
+  <div class="row">
+    <div class="col s12">
+      <!-- THIS IS THE CALENDAR -->
+      <div id="calendar"></div>
+    </div>
+  </div>
+
 </div>
-
-
-</div>
-
 
 
 
