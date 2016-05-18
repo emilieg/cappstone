@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'resumes/index'
+  # get 'resumes/index'
 
-  get 'resumes/new'
+  get 'resumes/new' => 'resumes#new'
 
-  get 'resumes/create'
+  get 'resumes/create' => 'resumes#create'
 
-  get 'resumes/destroy'
+  # get 'resumes/destroy'
 
-  get 'auth/logout'
+  # get 'auth/logout'
 
   root 'main#index'
 
@@ -85,4 +85,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  resources :resumes, only: [:index, :new, :create, :destroy]
 end
