@@ -4,9 +4,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def is_authenticated?
-  	unless current_user
-  		flash[:danger] = "Credentials not valid"
-  		redirect_to login_path
+  	# if current_user
+    unless current_user
+    puts '****CURRENT_USER**** ', current_user
+    
+		flash[:danger] = "You are not logged in. Please log in."
+		redirect_to root_path
   	end
   end
 

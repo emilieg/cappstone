@@ -4,7 +4,6 @@
   <title>Cappstone</title>
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="google-signin-client_id" content="445102183395-rrj135djfovm97f34otvt54u7uah733l.apps.googleusercontent.com">
@@ -12,10 +11,33 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
   <!-- Google Icons Stylesheet -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- Compiled and minified JavaScript -->
 </head>
 <body>
+
+    <div class="navbar-fixed">
+    <nav class="nav">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo"> cappstone <i class="material-icons right">work</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="waves-effect waves-light btn">Sign Up</a></li>
+          <li><a class="waves-effect waves-light btn">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <% flash.each do |type, message| %>
+    <script>
+      $(function() {
+        Materialize.toast('<%= message %>', 3500, 'rounded');
+      });
+    </script>
+<% end %>
+
+
 <main>
   <%= yield %>
 </main>

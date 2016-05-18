@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
   #dashboard will show a list of jobs under that user
   #future: remove old jobs from this list (make inactive?)
-  # before_action :is_authenticated?
+  before_action :is_authenticated?
   
   def show
     @jobs = Job.all

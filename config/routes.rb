@@ -7,15 +7,9 @@ Rails.application.routes.draw do
   get 'signup' => 'user#new'
   post 'signup' => 'user#create'
 
-  get 'login' => 'sessions#new'
-  post 'login' => 'session#create'
-  get 'logout' => 'sessions#destroy'
-
-  # get 'auth/logout'
-
-  # get 'auth/callback'
-
-  # get 'auth/failure'
+  # get 'login' => 'sessions#new'
+  # post 'login' => 'session#create'
+  # get 'logout' => 'sessions#destroy'
 
   get 'deck/show' => 'deck#show'
   get '/deck/:id' => 'deck#show'
