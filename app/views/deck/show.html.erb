@@ -29,7 +29,7 @@
           Department: <input type="text" name="department" value=""><br>
           Address: <input type="text" name="address" value=""><br>
           Salary Amount: <input type="text" name="salary-amount" value=""><br>
-          Salary Type: <input type="text" name="salary-type" value=""><br>
+          Salary Type:
           <p>
             <input name="salary" type="radio" id="annual" />
             <label for="annual">Annual</label>
@@ -205,7 +205,7 @@
     <!-- Modal End -->
 
     <h2 class="job-at-company">Job at Company</h2>
-    <p class="notes-p">
+    <p class="notes-p section-user-info">
 
       <% @note.each do |note| %>
         <%= note.content %>
