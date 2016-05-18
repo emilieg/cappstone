@@ -22,8 +22,12 @@
       <div class="nav-wrapper">
         <a href="#!" class="brand-logo"> cappstone <i class="material-icons right">work</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a class="waves-effect waves-light btn">Sign Up</a></li>
-          <li><a class="waves-effect waves-light btn">Login</a></li>
+        <% if session[:user_id].present? %>
+          <li id="logged-in">Logged in as <strong><%= @current_user[:email] %></strong></li>
+          <li><a href="" class="waves-effect waves-light btn" onclick="signOut();"> Log out </a></li>
+        <% else %>
+          <li><div id="my-signin2" style="width: 240; height: 40;" data-scope="profile email https://www.googleapis.com/auth/calendar" data-onsuccess="onSuccess" data-onfailure="onFailure"></div></li>
+        <% end %>
         </ul>
       </div>
     </nav>
@@ -48,8 +52,7 @@
       </div>
     </div>
   </footer>
-  <%= javascript_include_tag 'login', 'data-turbolinks-track' => true %>
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+  <%= javascript_include_tag 'authorize', 'data-turbolinks-track' => true %>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
