@@ -14,12 +14,13 @@ class DeckController < ApplicationController
   end
 
   def new
-    Job.create
+    @job = Job.create params[:job,:job_position,:apply_date,:job_description_url,:company_name,:department,:user_id,:comp_value,:comp_type,:relocation,:name,:phone,:email,:note_id]
+    redirect_to dashboard_path
   end
 
   private
   def job_params
-    params.require(:job).permit(:job_position,:company_name, :user_id, :event_type, :event_title, :note_id)
+    params.require(:job).permit(:job_position, :apply_date, :job_description_url, :company_name, :department, :comp_value, :comp_type, :relocation, :name, :phone, :email, :user_id, :event_type, :event_title, :note_id)
   end
 
 
