@@ -15,9 +15,7 @@
 //= require turbolinks
 //= require materialize-sprockets
 //= dashboard
-//= require amoment
-//= require clndr
 //= require dashboard
-#// = require_tree .
+// = require_tree .
 
 
