@@ -21,9 +21,10 @@ Rails.application.routes.draw do
   get '/deck/:id' => 'deck#show'
   get 'deck/new' => 'deck#new'
 
+  get 'auth/login' => 'auth#login'
   get 'auth/logout' => 'auth#logout'
   get 'auth/failure' => 'auth#failure'
-  get 'auth/:provider/callback' => 'auth#callback'
+  post 'auth/callback' => 'auth#callback'
 
   get 'dashboard' =>'dashboard#show'
 

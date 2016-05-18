@@ -3,12 +3,12 @@ class DeckController < ApplicationController
   end
 
   def show
-    @jobs = Job.All
+    @jobs = Job.all
     #if user id matches the user id on session and job
-    @company = Company.All
-    @event = Event.All
-    @event_type = EventType.All
-    @note = Note.All
+    @company = Company.all
+    @event = Event.all
+    @event_type = EventType.all
+    @note = Note.all
   end
 
   private
