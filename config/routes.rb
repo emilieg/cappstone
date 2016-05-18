@@ -12,15 +12,18 @@ Rails.application.routes.draw do
   # get 'logout' => 'sessions#destroy'
 
 
+
+
+  get 'dashboard/deck/new' => 'dashboard#new'
   get 'dashboard/deck/:id' => 'deck#show'
 
-  get 'dashboard/deck/new' => 'deck#new'
+  get 'deck' => 'deck#index'
 
-  get 'deck/new' => 'deck'
+  post 'deck' => 'deck#create'
 
-  post 'deck/new' => 'deck#new'
+  get 'deck/show' => 'deck#show'
 
-  get '/deck' => 'deck#show'
+
 
   get 'auth/login' => 'auth#login'
   get 'auth/logout' => 'auth#logout'

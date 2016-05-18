@@ -1,11 +1,16 @@
 class DeckController < ApplicationController
   before_action :is_authenticated?
 
+  def index
+
+  end
+
+
   def edit
   end
 
   def show
-    @jobs = Job.all
+    @jobs = Job.where(user_id: 2)
     #if user id matches the user id on session and job
     # @company = Company.all
 
@@ -16,21 +21,22 @@ class DeckController < ApplicationController
   end
 
   def new
-    @job = Job.create params[:position,:department,:address,:apply_date,:job_description_url,:relocation,:comp_value,:comp_type]
+    @job = Job.new
+  end
+
+  def create
+    @job = Job.new(job_params)
+    @job.save()
+
     redirect_to dashboard_path
-    @company = Company.all
-    @event = Event.all
-    @event_type = EventType.all
-    @note = Note.all
   end
 
   private
   def job_params
-    params.require(:job).permit(:job_position, :apply_date, :job_description_url, :company_name, :department, :comp_value, :comp_type, :relocation, :name, :phone, :email, :user_id, :event_type, :event_title, :note_id)
+    params.permit(:position,:apply_date, :job_description_url, :company_name, :department, :comp_value, :comp_type, :relocation, :name, :phone, :email, :user_id, :event_type, :event_title, :note_id)
   end
 
 
-  def new
-  end
+
 
 end
