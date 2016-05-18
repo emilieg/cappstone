@@ -1,4 +1,6 @@
 class DeckController < ApplicationController
+  before_action :is_authenticated?
+
   def edit
   end
 
@@ -16,6 +18,10 @@ class DeckController < ApplicationController
   def new
     @job = Job.create params[:position,:department,:address,:apply_date,:job_description_url,:relocation,:comp_value,:comp_type]
     redirect_to dashboard_path
+    @company = Company.all
+    @event = Event.all
+    @event_type = EventType.all
+    @note = Note.all
   end
 
   private

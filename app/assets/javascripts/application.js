@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require materialize-sprockets
-//= require_tree .
+//= dashboard
+//= require dashboard
+// = require_tree .
 
 
