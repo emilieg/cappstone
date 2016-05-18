@@ -10,13 +10,33 @@
     <div id="modal1" class="modal ">
       <div class="modal-content">
         <form class="Company" action="deck/new">
-          Position: <input type="text" name="position" placeholder="front end dev" value=""><br>
-          Application Date: <input type="text" name="application-date" value=""><br>
-          Job Description URL: <input type="text" name="job-description" value=""><br>
-          Company: <input type="text" name="company" value=""><br>
-          Department: <input type="text" name="department" value=""><br>
+          Position: <input type="text" name="position" placeholder="front end dev" value=
+          "<% @jobs.each do |job| %>
+              <%= job.position %>
+            <% end %>"><br>
+          Application Date: <input type="text" name="application-date" value=
+          "<% @jobs.each do |job| %>
+            <%= job.apply_date %>
+          <% end %>"><br>
+          Job Description URL: <input type="text" name="job-description" value="
+          <% @jobs.each do |job| %>
+            <%= job.job_description_url %>
+          <% end %>
+          "><br>
+          Company: <input type="text" name="company" value="
+
+          "><br>
+          Department: <input type="text" name="department" value="
+          <% @jobs.each do |job| %>
+            <%= job.department %>
+          <% end %>
+          "><br>
           Address: <input type="text" name="address" value=""><br>
-          Salary Amount: <input type="text" name="salary-amount" value=""><br>
+          Salary Amount: <input type="text" name="salary-amount" value="
+          <% @jobs.each do |job| %>
+            <%= job.address %>
+          <% end %>
+          "><br>
           Salary Type:
           <p>
             <input name="salary" type="radio" id="annual" />
