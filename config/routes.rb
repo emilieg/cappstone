@@ -11,9 +11,11 @@ Rails.application.routes.draw do
   # post 'login' => 'session#create'
   # get 'logout' => 'sessions#destroy'
 
-  get 'deck/show' => 'deck#show'
-  get '/deck/:id' => 'deck#show'
-  get 'deck/new' => 'deck#new'
+
+  get 'dashboard/deck/:id' => 'deck#show'
+
+  get 'dashboard/deck/new' => 'deck#new'
+
 
   get 'auth/login' => 'auth#login'
   get 'auth/logout' => 'auth#logout'
