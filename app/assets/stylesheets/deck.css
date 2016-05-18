@@ -12,9 +12,13 @@ body {
 
 .color-layer {
   background-color: #2A363B;
-
-
+  background-image:url('../assets/grey-city.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  height:100%;
+  margin-bottom: -30px;
 }
+
 
 .capp-well {
   background-color: #CC342E;
@@ -24,6 +28,11 @@ body {
   height: 400px;
   font-family: Oswald;
   border: white solid;
+  overflow: scroll;
+}
+
+.capp-well-new {
+  height: 80%;
 }
 
 .nav {
@@ -81,11 +90,13 @@ body {
 
 .section-h3 {
   margin:0px 0px;
+  font-size: 25px;
 }
 
 .section-user-info {
   margin: 0px 0px 20px 0px;
-  font-size: 25px;
+  font-size: 15px;
+  color:black;
 }
 
 
