@@ -5,11 +5,11 @@ require 'googleauth/stores/file_token_store'
 require 'fileutils'
 
 OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'
-APPLICATION_NAME = 'Google Calendar API Ruby Quickstart'
+APPLICATION_NAME = 'cappstone'
 CLIENT_SECRETS_PATH = 'client_secret.json'
 CREDENTIALS_PATH = File.join(Dir.home, '.credentials',
-                             "calendar-ruby-quickstart.yaml")
-SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR
+                             "cappstone.yaml")
+SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR, Google::Apis::Profile::AUTH_PROFILE
 ###  AUTH_CALENDAR instead of read-only
 
 ##
@@ -25,7 +25,7 @@ def authorize
   token_store = Google::Auth::Stores::FileTokenStore.new(file: CREDENTIALS_PATH)
   authorizer = Google::Auth::UserAuthorizer.new(
     client_id, SCOPE, token_store)
-  user_id = 'default'
+  user_id = 'blah'
   credentials = authorizer.get_credentials(user_id)
   if credentials.nil?
     url = authorizer.get_authorization_url(
@@ -54,7 +54,7 @@ response = service.list_events(calendar_id,
                                time_min: Time.now.iso8601)
 
 ###  Writes results to console ###
-puts response.items[0].summary
+puts response.summary
 puts "Upcoming events:"
 puts "No upcoming events found" if response.items.empty?
 response.items.each do |event|

@@ -14,3 +14,17 @@
  *= require_tree .
  *= require_self
  */
+
+#toast-container {
+  top: 80px;
+  left: auto;
+  right: 50px;;
+}
+
+.toast {
+  background-color: #2BBBAD;
+  width: 400px;
+  text-align: right;
+}
+
+
