@@ -14,30 +14,30 @@
     <div class="col s6">
     </div>
   </div>
-
-  <div class="row">  
-    <div class="col s12">      
-      <div class="collection">
-        <% @job.each do |job| %>
-        <% @company.each do |company|  %>
-        <a href="/deck" class="collection-item"><%= job.position %> <%= company.name %></a>
-        <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div> 
-  <div class="row">
-    <div class="col s12">
-      <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a> 
-    </div>
-  </div>
-
-  <div class="row">
+    <div class="row">
     <div class="col s12">
       <!-- THIS IS THE CALENDAR -->
       <div id="calendar"></div>
     </div>
   </div>
+<div class="row">  
+  <div class="col s12">      
+    <div class="collection">
+      <% @job.each do |job| %>
+      <% @company.each do |company|  %>
+      <a href="/deck" class="collection-item"><%= job.position %> <%= company.name %></a>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div> 
+<div class="row">
+  <div class="col s12">
+    <a href="" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a> 
+  </div>
+</div>
+
+
 
 </div>
 
