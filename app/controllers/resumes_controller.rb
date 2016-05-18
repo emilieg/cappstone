@@ -1,4 +1,6 @@
 class ResumesController < ApplicationController
+ before_action :current_user
+
   def index
   	@resumes = Resume.all
   end
