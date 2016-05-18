@@ -18,9 +18,11 @@ Rails.application.routes.draw do
   # get 'auth/failure'
 
 
-  post 'deck/new' => 'deck#new'
+
 
   get 'deck/new' => 'deck'
+
+  post 'deck/new' => 'deck#new'
 
   get '/deck' => 'deck#show'
 
