@@ -19,7 +19,6 @@ Rails.application.routes.draw do
 
 
 
-
   get 'deck/new' => 'deck'
 
   post 'deck/new' => 'deck#new'
