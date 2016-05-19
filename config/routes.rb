@@ -5,16 +5,19 @@ Rails.application.routes.draw do
   get 'resumes/new' => 'resumes#new'
   get 'resumes/create' => 'resumes#create'
 
+
   # get 'auth/logout'
 
   get 'calendar/add'
   get 'calendar/edit'
   
+
   get 'auth/logout'
 
 
   get 'signup' => 'user#new'
   post 'signup' => 'user#create'
+
 
   # get 'login' => 'sessions#new'
   # post 'login' => 'session#create'
@@ -27,6 +30,10 @@ Rails.application.routes.draw do
   get 'dashboard/deck/:id' => 'deck#show'
 
   
+
+  get 'dashboard' =>'dashboard#show'
+
+
   get 'dashboard/deck/new' => 'deck#new'
   get 'dashboard/deck/:id' => 'deck#show'
   put 'dashboard/deck/:id' => 'deck#update'
