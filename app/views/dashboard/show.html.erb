@@ -4,9 +4,38 @@
     </div>
   </div>
     <div class="row">
-    <div class="col s12">
+      <div class="col s12">
+        <div id="current-time">  
+        <% time = Time.new %>
+        <%= time.year %>
+        <%= time.strftime("%A,") %>
+        <%= time.strftime("%B,") %>
+        <%= time.strftime("%d") %>
+        </div>
       <!-- THIS IS THE CALENDAR -->
-      <div id="calendar"></div>
+      <div id="calendar">
+      <table class="highlight responsive-table">
+        <thead>
+          <tr>
+              <th data-field="id">Date</th>
+              <th data-field="time">Time</th>
+              <th data-field="name">Event</th>
+              <th data-field="location">Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+        <% @result.each do |event| %>
+        <% @dt = event.start.date_time  %>
+          <td><%= @dt.strftime('%B %d, %Y')%></td>
+          <td><%= @dt.strftime('%I:%M %p') %></td> 
+          <td><%= event.summary %></td>
+          <td><%= event.location %></td>
+          </tr>
+        <%end%>       
+        </tbody>
+      </table>              
+      </div>
     </div>
   </div>
 <div class="row">  

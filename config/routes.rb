@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+ 
+
+  get 'calendar/add'
+
+  get 'calendar/edit'
+
+  
   get 'auth/logout'
 
   root 'main#index'
@@ -28,7 +35,7 @@ Rails.application.routes.draw do
   post 'auth/callback' => 'auth#callback'
 
   get 'dashboard' =>'dashboard#show'
-
+  # get 'dashboard' => 'calendar#api'
 
   get 'upload_test' => 'main#upload_test'
 
