@@ -14,8 +14,9 @@ Rails.application.routes.draw do
 
 
 
-  get 'dashboard/deck/new' => 'dashboard#new'
+  get 'dashboard/deck/new' => 'deck#new'
   get 'dashboard/deck/:id' => 'deck#show'
+  put 'dashboard/deck/:id' => 'deck#update'
 
   get 'deck' => 'deck#index'
 
