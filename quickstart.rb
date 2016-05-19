@@ -9,7 +9,7 @@ APPLICATION_NAME = 'cappstone'
 CLIENT_SECRETS_PATH = 'client_secret.json'
 CREDENTIALS_PATH = File.join(Dir.home, '.credentials',
                              "cappstone.yaml")
-SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR, Google::Apis::Profile::AUTH_PROFILE
+SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR
 ###  AUTH_CALENDAR instead of read-only
 
 ##
@@ -25,7 +25,7 @@ def authorize
   token_store = Google::Auth::Stores::FileTokenStore.new(file: CREDENTIALS_PATH)
   authorizer = Google::Auth::UserAuthorizer.new(
     client_id, SCOPE, token_store)
-  user_id = 'blah'
+  user_id = 'emiliegerberharris@gmail.com'
   credentials = authorizer.get_credentials(user_id)
   if credentials.nil?
     url = authorizer.get_authorization_url(
@@ -36,7 +36,10 @@ def authorize
     code = gets
     credentials = authorizer.get_and_store_credentials_from_code(
       user_id: user_id, code: code, base_url: OOB_URI)
+    
+
   end
+  puts credentials
   credentials
 end
 
@@ -44,6 +47,7 @@ end
 service = Google::Apis::CalendarV3::CalendarService.new
 service.client_options.application_name = APPLICATION_NAME
 service.authorization = authorize
+
 
 # Fetch the next 10 events for the user
 calendar_id = 'primary'
@@ -57,12 +61,14 @@ response = service.list_events(calendar_id,
 puts response.summary
 puts "Upcoming events:"
 puts "No upcoming events found" if response.items.empty?
+### This is the data that the controller would need to return and pass into views
+
 response.items.each do |event|
   start = event.start.date || event.start.date_time
   puts "- #{event.summary} (#{start})"
 end
 
-
+## This is adding a new calendar event - would require new controller
 event = Google::Apis::CalendarV3::Event.new(
   summary: 'Phone interview',
   location: '1234 5th Ave S, Seattle, WA',

@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+ 
+
+  get 'calendar/add'
+
+  get 'calendar/edit'
+
+  
   get 'auth/logout'
 
   root 'main#index'
