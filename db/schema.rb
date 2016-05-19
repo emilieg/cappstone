@@ -69,13 +69,11 @@ ActiveRecord::Schema.define(version: 20160516192801) do
     t.string   "comp_type"
     t.integer  "user_id"
     t.integer  "company_id"
-    t.integer  "resume_id"
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
 
   add_index "jobs", ["company_id"], name: "index_jobs_on_company_id", using: :btree
-  add_index "jobs", ["resume_id"], name: "index_jobs_on_resume_id", using: :btree
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
 
   create_table "notes", force: :cascade do |t|
@@ -87,14 +85,6 @@ ActiveRecord::Schema.define(version: 20160516192801) do
   end
 
   add_index "notes", ["job_id"], name: "index_notes_on_job_id", using: :btree
-
-  create_table "resumes", force: :cascade do |t|
-    t.integer  "job_id"
-    t.string   "name"
-    t.string   "attachment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "provider"
@@ -110,7 +100,6 @@ ActiveRecord::Schema.define(version: 20160516192801) do
   add_foreign_key "events", "event_types"
   add_foreign_key "events", "jobs"
   add_foreign_key "jobs", "companies"
-  add_foreign_key "jobs", "resumes"
   add_foreign_key "jobs", "users"
   add_foreign_key "notes", "jobs"
 end

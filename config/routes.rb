@@ -1,16 +1,6 @@
 Rails.application.routes.draw do
 
 
-  # get 'resumes/index'
-
-  get 'resumes/new' => 'resumes#new'
-
-  get 'resumes/create' => 'resumes#create'
-
-  # get 'resumes/destroy'
-
-  # get 'auth/logout'
-
 
   get 'calendar/add'
 
@@ -29,6 +19,9 @@ Rails.application.routes.draw do
   # post 'login' => 'session#create'
   # get 'logout' => 'sessions#destroy'
 
+
+
+
   get 'dashboard/deck/new' => 'deck#new'
   get 'dashboard/deck/:id' => 'deck#show'
   put 'dashboard/deck/:id' => 'deck#update'
@@ -40,6 +33,7 @@ Rails.application.routes.draw do
   post 'deck/note' => 'deck#create_note'
 
   get 'deck/show' => 'deck#show'
+
 
 
   get 'dashboard/deck/:id' => 'deck#show'
@@ -113,6 +107,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  resources :resumes, only: [:index, :new, :create, :destroy]
 end

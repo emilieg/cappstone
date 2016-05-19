@@ -23,21 +23,17 @@ class AuthController < ApplicationController
       puts 'data:'
       puts data
 
-  	user = User.find_or_create_by(provider_id: data[:provider_id], provider: data[:provider]) do |u|
+  	user = User.find_or_create_by(provider_id: data[:user_id], provider: data[:provider]) do |u|
   		u.provider_hash = data[:provider_hash]
   		u.name = data[:name]
   		u.email = data[:email]
   	end
 
-    puts "auth callback", user
-    puts "auth callback", user.name
-    puts "auth callback", user.email
-
   	#attach a user id to the current session
   	session[:user_id] = user.id
     @current_user = user
 
-  	#redirect the user to the homepage
+  	# redirect the user to the hompage
     return '200'
 
   end
