@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
   get 'calendar/edit'
 
-  
   get 'auth/logout'
 
   root 'main#index'
