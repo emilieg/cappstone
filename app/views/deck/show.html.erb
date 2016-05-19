@@ -124,7 +124,10 @@
     <!-- Modal End -->
     <h2 class="job-at-company">Job at Company</h2>
     <p class="section-user-info">
-
+       <% @events.each do |event| %>
+     <p> <%= event.title %> </p>
+     <p> <%= event.description %> </p>
+      <% end %>
     </p>
   </section>
   <!-- Location -->
@@ -170,6 +173,7 @@
     <p class="notes-p section-user-info">
 
       <% @notes.each do |note| %>
+      <p> <%= note.title %> </p>
      <p> <%= note.content %> </p>
       <% end %>
 
