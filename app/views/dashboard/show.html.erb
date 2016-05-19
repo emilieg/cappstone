@@ -7,16 +7,10 @@
       <div class="col s12">
         <div id="current-time">  
         <% time = Time.new %>
-        <p class="year"><%= time.year%></p>     
-        
-        <p class="date"><%= time.strftime("%d") %></p>
-        <p class="month"><%=time.strftime("%B") %></p>
-        <p class="day"><%= time.strftime("%a,")%> </p>
-        </div>
-        <div> 
-       
-    
-        
+        <p class="year time"><%= time.year%></p>        
+        <p class="date time"><%= time.strftime("%d")%></p>
+        <p class="month time"><%=time.strftime("%B")%></p>
+        <p class="day time"><%= time.strftime("%a,")%> </p>
         </div>
       </div>
     </div>    
@@ -35,7 +29,7 @@
         </thead>
         <tbody>
           <tr>
-
+            
           </tr>       
         </tbody>
       </table>              

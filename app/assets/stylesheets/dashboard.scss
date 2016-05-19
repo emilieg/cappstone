@@ -18,7 +18,8 @@
              0 10px 40px 0 rgba(0,0,0,0.1);
 }
 
-div:before, div:after{
+//THESE BEFORE AND AFTER LAYERS ARE SHOWING ON MAIN PAGE
+current-time:before, current-time:after{
   content:" ";
   position:absolute;
   width:3px;
@@ -29,9 +30,10 @@ div:before, div:after{
   margin-top:50%;
 }
 
-div:after{
+current-time:after{
   right:0;
 }
+
 
 .year {
   position:absolute;
@@ -60,7 +62,7 @@ div:after{
  }
 
 //This makes the shadow on top
-p:first-of-type:after{
+time:first-of-type:after{
   content:" ";
   width:103px;
   height:51px;

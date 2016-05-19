@@ -26,9 +26,9 @@
         <% if @current_user %>
           <li id="logged-in">Logged in as <strong><%= @current_user[:email] %></strong></li>
           <!-- <li><a href="" class="waves-effect waves-light btn" onclick="signOut();"> Log out </a></li> -->
-          <li><button id="google_logout" class="waves-effect waves-light btn"> Log out </button></li>
+          <li><button id="google_logout" class="waves-effect waves-light teal lighten-2 btn"> Log out </button></li>
         <% else %>
-          <li><button id="google_auth" class="waves-effect waves-light btn"> Log in </button></li>
+          <li><button id="google_auth" class="waves-effect waves-light teal lighten-2 btn"> Log in </button></li>
           <!-- <div id="my-signin2" style="width: 240; height: 40;" data-scope="profile email https://www.googleapis.com/auth/calendar" data-onsuccess="onSuccess" data-onfailure="onFailure"></div> -->
         <% end %>
         </ul>
@@ -70,11 +70,8 @@
   </script>
   <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
   <%= javascript_include_tag 'authorize', 'data-turbolinks-track' => true %>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.1/fullcalendar.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.1/fullcalendar.min.css"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.1/fullcalendar.print.css"></script>
 </body>
 </html>

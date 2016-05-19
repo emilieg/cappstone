@@ -1,14 +1,12 @@
 
 class DashboardController < ApplicationController
 
-
-
   before_action :is_authenticated?
 
   require 'google/apis/calendar_v3'
   require 'googleauth'
   require 'googleauth/stores/file_token_store'
-  require 'net/http'
+  # require 'net/http'
   require 'fileutils'
   require 'rest-client'
   require 'net/http'
