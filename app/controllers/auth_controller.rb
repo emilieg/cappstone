@@ -29,7 +29,6 @@ class AuthController < ApplicationController
     
       puts user
       user.update(provider_hash: data[:provider_hash], name: data[:name], email:data[:email])
-    validates :email,
   # presence: true,
   # uniqueness: {case_sensitive: false}  user.save
 
