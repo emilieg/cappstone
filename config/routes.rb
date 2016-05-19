@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
 
- 
+  root 'main#index'
+
+  get 'resumes/new' => 'resumes#new'
+  get 'resumes/create' => 'resumes#create'
 
   get 'calendar/add'
-
   get 'calendar/edit'
-
   
   get 'auth/logout'
-
-  root 'main#index'
 
   get 'signup' => 'user#new'
   post 'signup' => 'user#create'
@@ -17,20 +16,13 @@ Rails.application.routes.draw do
   get 'dashboard/deck/new' => 'deck#new'
   get 'dashboard/deck/:id' => 'deck#show'
   put 'dashboard/deck/:id' => 'deck#update'
-
-  get 'deck' => 'deck#index'
-  post 'deck' => 'deck#create'
-  get 'deck/show' => 'deck#show'
-
+  
   get 'auth/login' => 'auth#login'
   get 'auth/logout' => 'auth#logout'
   get 'auth/failure' => 'auth#failure'
   post 'auth/callback' => 'auth#callback'
 
   get 'dashboard' =>'dashboard#show'
-
-  get 'upload_test' => 'main#upload_test'
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -86,4 +78,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  resources :resumes, only: [:index, :new, :create, :destroy]
 end

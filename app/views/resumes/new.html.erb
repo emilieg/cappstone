@@ -1,0 +1,21 @@
+<h1>Upload a New Resume</h1>
+<% if !@resume.errors.empty? %>
+   <div>
+      <ul>
+         <% @resume.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>
+      </ul>
+   </div>
+<% end %>
+
+<div class = "well">
+   <%= form_for @resume, html: { multipart: true } do |f| %>
+      <% f.hidden_field :job_id %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :attachment %>
+      <%= f.file_field :attachment %>
+      <%= f.submit "Save", class: "btn" %>
+   <% end %>
+</div>
