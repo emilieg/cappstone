@@ -11,6 +11,7 @@
 
 <div class = "well">
    <%= form_for @resume, html: { multipart: true } do |f| %>
+      <% f.hidden_field :job_id %>
       <%= f.label :name %>
       <%= f.text_field :name %>
       <%= f.label :attachment %>
