@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   get 'resumes/new' => 'resumes#new'
   get 'resumes/create' => 'resumes#create'
 
-  get 'calendar/add'
-  get 'calendar/edit'
   
   get 'auth/logout'
 
