@@ -11,10 +11,20 @@ class DeckController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def updateContacts
+    @contact = Contact.find(params[:id])
+  end
+
+  def addNote
+    @note = Note.create(note_params)
+    @note.update_attributes(params.permit(:title,:content))
+  end
+
 
   def show
     ### Placeholder users not tied to jobs, replace :position => "Front-end Developer" with :job_id
     @job = Job.find(params[:id])
+    @note = Note.new
     #if user id matches the user id on session and job
     # @company = Company.all
 
@@ -39,12 +49,21 @@ class DeckController < ApplicationController
   def create
     @job = Job.new(job_params)
     @job.save()
-    @note = Note.new(note_params)
-    @note.save()
+
     @contact = Contact.new(contact_params)
     @contact.save()
 
     redirect_to dashboard_path
+  end
+
+  def new_note
+    @note = Note.new
+  end
+
+  def create_note
+    puts "params:", params
+    @note = Note.create(params.require(:note).permit(:title,:content))
+    @note.save()
   end
 
   private

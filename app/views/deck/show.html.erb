@@ -24,62 +24,6 @@
           <%= f.text_field :comp_value %>
           <%= f.submit %>
         <% end %>
-        <!-- <form class="Company" action="deck/new">
-
-          Position: <input type="text" name="position" placeholder="front end dev" value='
-
-              <%= @job.position %>'>
-
-          Application Date: <input type="text" name="application-date" value=
-          "
-            <%= @job.apply_date %>
-          ">
-          Job Description URL: <input type="text" name="job-description" value="
-
-            <%= @job.job_description_url %>
-
-          "><br>
-          Company: <input type="text" name="company" value="
-
-          "><br>
-          Department: <input type="text" name="department" value="
-
-            <%= @job.department %>
-
-          "><br>
-          Address: <input type="text" name="address" value="
-            <%= @job.address %>
-          "><br>
-
-          Salary Amount: <input type="text" name="salary-amount" value="
-
-            <%= @job.comp_value %>
-
-          "><br>
-          Salary Type:
-          <p>
-            <input name="salary" type="radio" id="annual" />
-            <label for="annual">Annual</label>
-          </p>
-          <p>
-            <input name="salary" type="radio" id="hourly" />
-            <label for="hourly">Hourly</label>
-          </p>
-          <p>
-            <input name="salary" type="radio" id="monthly" />
-            <label for="monthly">Monthly</label>
-          </p>
-          Relocation Required:
-          <p>
-            <input name="relo" type="radio" id="relo-yes" />
-            <label for="relo-yes">Yes</label>
-          </p>
-          <p>
-            <input name="relo" type="radio" id="relo-no" />
-            <label for="relo-no">No</label>
-          </p>
-          <input type="submit" value="Submit">
-        </form> -->
       </div>
       <div class="modal-footer">
         <span class=" modal-action modal-close waves-effect waves-green btn-flat"> Close </span>
@@ -135,12 +79,16 @@
     <!-- Modal Structure -->
     <div id="modal2" class="modal">
       <div class="modal-content">
-        <form class="Company" action="">
+
+
+
+
+        <!-- <form class="Company" action="">
           Name: <input type="text" name="name" value=""><br>
           Number: <input type="text" name="number" value=""><br>
           EMail: <input type="text" name="email" value=""><br>
           <input type="submit" value="Submit">
-        </form>
+        </form> -->
       </div>
       <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
@@ -183,7 +131,7 @@
   <div class="scrollable-section" data-section-title="Location">
   </div>
   <section class="capp-well">
-    <h1 class="section-main-header">Location</h1>
+    <h1 class="section-main-header">Resume</h1>
     <h2 class="job-at-company job-at-company-location">Job at Company</h2>
   </section>
   <!-- Notes -->
@@ -192,14 +140,24 @@
   <section class="capp-well">
     <h1 class="section-main-header">Notes</h1>
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger2 edit-button-style" href="#modal3">Add Note</a>
+    <a class="waves-effect waves-light btn modal-trigger2 edit-button-style" href="#modal4">Add Note</a>
     <!-- Modal Structure -->
-    <div id="modal3" class="modal">
+    <div id="modal4" class="modal">
       <div class="modal-content">
-        <form class="Company" action="">
+
+      <%= form_for @note, url:{:action => :create_note}, :method => 'post' do |f|%>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+          <%= f.label :content %>
+          <%= f.text_field :content %>
+          <%= f.submit %>
+      <% end %>
+
+
+        <!-- <form class="Company" action="">
           Note: <input type="text" name="note" value=""><br>
           <input type="submit" value="Submit">
-        </form>
+        </form> -->
       </div>
       <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
