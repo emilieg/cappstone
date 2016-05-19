@@ -26,7 +26,7 @@ $(document).ready(function(){
             provider_id: authData.uid,
             provider: authData.provider,
             provider_hash: authData.google.accessToken,
-            user: authData.google.displayName,
+            name: authData.google.displayName,
             email: authData.google.email
           },
           success: function() {
