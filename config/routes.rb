@@ -10,6 +10,13 @@ Rails.application.routes.draw do
 
   # get 'auth/logout'
 
+  get 'calendar/add'
+
+  get 'calendar/edit'
+
+  
+  get 'auth/logout'
+
   root 'main#index'
 
   get 'signup' => 'user#new'
