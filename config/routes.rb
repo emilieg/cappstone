@@ -5,22 +5,15 @@ Rails.application.routes.draw do
   get 'resumes/new' => 'resumes#new'
   get 'resumes/create' => 'resumes#create'
 
-<<<<<<< HEAD
-  
-=======
->>>>>>> f46cab42fdc9361544c6ebae5a1b73019cd3bd12
   get 'auth/logout'
 
   get 'signup' => 'user#new'
   post 'signup' => 'user#create'
 
-<<<<<<< HEAD
+
 
   get 'dashboard' =>'dashboard#show'
-=======
-  get 'dashboard' =>'dashboard#show'
 
->>>>>>> f46cab42fdc9361544c6ebae5a1b73019cd3bd12
   get 'dashboard/deck/new' => 'deck#new'
   get 'dashboard/deck/:id' => 'deck#show'
   put 'dashboard/deck/:id' => 'deck#update'
