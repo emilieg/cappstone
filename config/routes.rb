@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
 
-  # get 'resumes/index'
+  root 'main#index'
 
   get 'resumes/new' => 'resumes#new'
-
   get 'resumes/create' => 'resumes#create'
-
 
   # get 'auth/logout'
 
   root 'main#index'
+
+  get 'calendar/add'
+  get 'calendar/edit'
+  
+  get 'auth/logout'
+
 
   get 'signup' => 'user#new'
   post 'signup' => 'user#create'
@@ -25,14 +29,14 @@ Rails.application.routes.draw do
   get 'dashboard/deck/:id' => 'deck#show'
 
   
+  get 'dashboard/deck/new' => 'deck#new'
+  get 'dashboard/deck/:id' => 'deck#show'
+  put 'dashboard/deck/:id' => 'deck#update'
   
   get 'auth/login' => 'auth#login'
   get 'auth/logout' => 'auth#logout'
   get 'auth/failure' => 'auth#failure'
   post 'auth/callback' => 'auth#callback'
-
-
-  get 'upload_test' => 'main#upload_test'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

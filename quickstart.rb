@@ -51,7 +51,7 @@ end
 
 service = Google::Apis::CalendarV3::CalendarService.new
 service.client_options.application_name = APPLICATION_NAME
-# service.authorization = authorize
+service.authorization = authorize
 
 
 # Fetch the next 10 events for the user
@@ -99,3 +99,7 @@ event = Google::Apis::CalendarV3::Event.new(
 ### 'Primary' needs to be replaced with current_user email address
 result = service.insert_event('primary', event)
 puts "Event created: #{result.html_link}"
+
+
+
+

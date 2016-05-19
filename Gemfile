@@ -34,8 +34,7 @@ gem "carrierwave", "~> 0.9"
 
 # gem 'signet'
 gem 'google-api-client'
-
-
+gem 'rest-client'
 
 gem 'pg'
 gem 'validates_phone_number'
