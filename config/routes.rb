@@ -7,8 +7,6 @@ Rails.application.routes.draw do
 
   # get 'auth/logout'
 
-  root 'main#index'
-
   get 'calendar/add'
   get 'calendar/edit'
   
