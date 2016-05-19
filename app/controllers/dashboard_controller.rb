@@ -26,7 +26,6 @@ class DashboardController < ApplicationController
     maxResults = 10
     encoded_url = URI.encode('https://www.googleapis.com/calendar/v3/calendars/drewrudebusch@gmail.com/events?timeMin=2016-05-09T10:00:00-07:00')
 
-
     puts "About to make call to Google Calendar API...Hooray!!!"
 
     response = RestClient::Request.execute(
