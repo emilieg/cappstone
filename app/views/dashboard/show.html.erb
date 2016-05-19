@@ -8,13 +8,15 @@
         <div id="current-time">  
         <% time = Time.new %>
         <p class="year"><%= time.year%></p>     
-        <p class="day"><%= time.strftime("%A,")%></p>
+        
         <p class="date"><%= time.strftime("%d") %></p>
+        <p class="month"><%=time.strftime("%B") %></p>
+        <p class="day"><%= time.strftime("%a,")%> </p>
         </div>
         <div> 
+       
+    
         
-        <span  class=""></span>
-        <span class="month"><%= time.strftime("%B,") %></p>
         </div>
       </div>
     </div>    

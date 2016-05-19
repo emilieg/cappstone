@@ -14,17 +14,18 @@ Rails.application.routes.draw do
   get 'signup' => 'user#new'
   post 'signup' => 'user#create'
 
-<<<<<<< HEAD
+
   # get 'login' => 'sessions#new'
   # post 'login' => 'session#create'
   # get 'logout' => 'sessions#destroy'
 
 
 
-
+  get 'dashboard' =>'dashboard#show'
   get 'dashboard/deck/new' => 'deck#new'
   get 'dashboard/deck/:id' => 'deck#show'
   put 'dashboard/deck/:id' => 'deck#update'
+
 
   get 'deck' => 'deck#index'
 
@@ -33,20 +34,12 @@ Rails.application.routes.draw do
   get 'deck/show' => 'deck#show'
 
 
-=======
-  get 'dashboard/deck/:id' => 'deck#show'
-  get 'dashboard/deck/new' => 'deck#new'
-  get 'deck/new' => 'deck'
-  post 'deck/new' => 'deck#new'
-  get '/deck' => 'deck#show'
->>>>>>> 5f4d204f310a12599de32015867aff60cc872130
-
   get 'auth/login' => 'auth#login'
   get 'auth/logout' => 'auth#logout'
   get 'auth/failure' => 'auth#failure'
   post 'auth/callback' => 'auth#callback'
 
-  get 'dashboard' =>'dashboard#show'
+
 
   get 'upload_test' => 'main#upload_test'
 
