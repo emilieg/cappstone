@@ -12,11 +12,19 @@
         <%= form_for @job, url:{:action => "update", :controller => 'deck'}, :method => 'put' do |f|%>
           <%= f.label :position %>
           <%= f.text_field :position %>
+          <%= f.label :apply_date %>
+          <%= f.text_field :apply_date %>
+          <%= f.label :job_description_url %>
+          <%= f.text_field :job_description_url %>
+          <%= f.label :department %>
+          <%= f.text_field :department %>
+          <%= f.label :address %>
+          <%= f.text_field :address %>
+          <%= f.label :comp_value %>
+          <%= f.text_field :comp_value %>
           <%= f.submit %>
         <% end %>
-
-
-        <form class="Company" action="deck/new">
+        <!-- <form class="Company" action="deck/new">
 
           Position: <input type="text" name="position" placeholder="front end dev" value='
 
@@ -71,7 +79,7 @@
             <label for="relo-no">No</label>
           </p>
           <input type="submit" value="Submit">
-        </form>
+        </form> -->
       </div>
       <div class="modal-footer">
         <span class=" modal-action modal-close waves-effect waves-green btn-flat"> Close </span>
