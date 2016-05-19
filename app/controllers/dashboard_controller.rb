@@ -30,7 +30,7 @@ class DashboardController < ApplicationController
     email = session[:email]
     timeMin = Time.now.iso8601
     maxResults = 10
-    encoded_url = URI.encode('https://www.googleapis.com/calendar/v3/calendars/drewrudebusch@gmail.com/events?timeMin=2016-05-09T10:00:00-07:00')
+    encoded_url = URI.encode('https://www.googleapis.com/calendar/v3/calendars/' + email + '/events?timeMin=2016-05-09T10:00:00-07:00')
 
     puts "About to make call to Google Calendar API...Hooray!!!"
 
@@ -51,10 +51,10 @@ class DashboardController < ApplicationController
     if @response['items'].empty?
       ### This is the data that the controller would need to return and pass into views
       @result = @response['items']
-        @response.items.each do |event|
-          @start = event.start.date
-          @time = event.start.date_time
-          @appointment = event.summary
+        @response['items'].each do |event|
+          @start = event['start']['date']
+          @time = event['start']['date_time']
+          @appointment = event['summary']
           puts "- #{event.summary} (#{@start})"
           puts "-#{event.start.date}"
         end
@@ -69,10 +69,6 @@ class DashboardController < ApplicationController
 #               <td><%= event.location %></td>
 #             <%end%>
   
-
-
-
-
   def new
      @job = Job.new
   end
