@@ -26,9 +26,6 @@ Rails.application.routes.draw do
   # post 'login' => 'session#create'
   # get 'logout' => 'sessions#destroy'
 
-
-
-
   get 'dashboard/deck/new' => 'deck#new'
   get 'dashboard/deck/:id' => 'deck#show'
   put 'dashboard/deck/:id' => 'deck#update'
