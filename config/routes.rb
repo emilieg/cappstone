@@ -5,13 +5,12 @@ Rails.application.routes.draw do
   get 'resumes/new' => 'resumes#new'
   get 'resumes/create' => 'resumes#create'
 
-  get 'calendar/add'
-  get 'calendar/edit'
-  
   get 'auth/logout'
 
   get 'signup' => 'user#new'
   post 'signup' => 'user#create'
+
+  get 'dashboard' =>'dashboard#show'
 
   get 'dashboard/deck/new' => 'deck#new'
   get 'dashboard/deck/:id' => 'deck#show'
@@ -21,8 +20,6 @@ Rails.application.routes.draw do
   get 'auth/logout' => 'auth#logout'
   get 'auth/failure' => 'auth#failure'
   post 'auth/callback' => 'auth#callback'
-
-  get 'dashboard' =>'dashboard#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

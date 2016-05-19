@@ -1,5 +1,6 @@
 class ResumesController < ApplicationController
  before_action :current_user
+ before_action :is_authenticated?
 
   def index
   	@resumes = Resume.all
