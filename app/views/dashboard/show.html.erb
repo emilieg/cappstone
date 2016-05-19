@@ -24,15 +24,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-        <% @result.each do |event| %>
-        <% @dt = event.start.date_time  %>
-          <td><%= @dt.strftime('%B %d, %Y')%></td>
-          <td><%= @dt.strftime('%I:%M %p') %></td> 
-          <td><%= event.summary %></td>
-          <td><%= event.location %></td>
-          </tr>
-        <%end%>       
+   
         </tbody>
       </table>              
       </div>
