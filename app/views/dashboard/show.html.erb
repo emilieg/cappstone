@@ -7,14 +7,22 @@
       <div class="col s12">
         <div id="current-time">  
         <% time = Time.new %>
-        <%= time.year %>
-        <%= time.strftime("%A,") %>
-        <%= time.strftime("%B,") %>
-        <%= time.strftime("%d") %>
+        <p class="year"><%= time.year%></p>     
+        <p class="day"><%= time.strftime("%A,")%></p>
+        <p class="date"><%= time.strftime("%d") %></p>
         </div>
+        <div> 
+        
+        <span  class=""></span>
+        <span class="month"><%= time.strftime("%B,") %></p>
+        </div>
+      </div>
+    </div>    
       <!-- THIS IS THE CALENDAR -->
-      <div id="calendar">
-      <table class="highlight responsive-table">
+      <div class="row">
+        <div class="col s12">
+        <div id="calendar">
+        <table class="highlight responsive-table">
         <thead>
           <tr>
               <th data-field="id">Date</th>
