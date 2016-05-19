@@ -11,7 +11,7 @@ class CreateJobs < ActiveRecord::Migration
       t.string :comp_type
       t.references :user, index: true, foreign_key: true
       t.references :company, index: true, foreign_key: true
-      #t.references :resume, index: true, foreign_key: true
+      t.references :resume, index: true, foreign_key: true
       t.timestamps null: false
     end
   end
