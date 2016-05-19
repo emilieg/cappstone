@@ -30,23 +30,7 @@ class DashboardController < ApplicationController
     email = session[:email]
     timeMin = Time.now.iso8601
     maxResults = 10
-    encoded_url = URI.encode('https://www.googleapis.com/calendar/v3/calendars/drewrudebusch@gmail.com/events?timeMin=2016-05-09T10:00:00-07:00')
-    # url = URI.parse(encoded_url)
-
-    # puts 'encoded URL'
-    # puts encoded_url
-    # puts 'unencoded URI'
-    # puts url
-
-
-    # uri = URI('https://www.googleapis.com/calendar/v3/calendars/drewrudebusch@gmail.com/events\?timeMin\=2016-05-01T10:00:00-07:00')
-
-    # req = Net::HTTP::Get.new(uri)
-    # req['Authorization'] = 'Bearer ' + session[:access_token].to_s
-
-    # res = Net::HTTP.start(uri.hostname, uri.port) {|http|
-    #   http.request(req)
-    # }
+    encoded_url = URI.encode('https://www.googleapis.com/calendar/v3/calendars/' + email + '/events?timeMin=2016-05-09T10:00:00-07:00')
 
     puts "About to make call to Google Calendar API...Hooray!!!"
 
@@ -59,15 +43,6 @@ class DashboardController < ApplicationController
     puts "Calendar API response"
     puts @response['summary']
 
-    # Fetch the next 10 events for the user
-
-    # calendar_id = 'primary'
-    # @response = service.list_events(calendar_id,
-    #                                max_results: 10,
-    #                                single_events: true,
-    #                                order_by: 'startTime',
-    #                                time_min: Time.now.iso8601)
-
       ###  Writes results to console ###
       puts @response['summary']
       puts "Upcoming events:"
@@ -76,10 +51,10 @@ class DashboardController < ApplicationController
     if @response['items'].empty?
       ### This is the data that the controller would need to return and pass into views
       @result = @response['items']
-        @response.items.each do |event|
-          @start = event.start.date
-          @time = event.start.date_time
-          @appointment = event.summary
+        @response['items'].each do |event|
+          @start = event['start']['date']
+          @time = event['start']['date_time']
+          @appointment = event['summary']
           puts "- #{event.summary} (#{@start})"
           puts "-#{event.start.date}"
         end
@@ -94,10 +69,6 @@ class DashboardController < ApplicationController
 #               <td><%= event.location %></td>
 #             <%end%>
   
-
-
-
-
   def new
      @job = Job.new
   end

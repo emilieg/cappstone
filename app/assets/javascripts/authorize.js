@@ -44,6 +44,8 @@ $(document).ready(function(){
     });
   })
 
+
+
   $('#google_logout').on('click', function(e) {
     e.preventDefault();
     console.log('About to unauth user');
