@@ -25,6 +25,8 @@ class DeckController < ApplicationController
     ### Placeholder users not tied to jobs, replace :position => "Front-end Developer" with :job_id
     @job = Job.find(params[:id])
     @note = Note.new
+    @notes = Note.where(:job_id => @job.id)
+
     #if user id matches the user id on session and job
     # @company = Company.all
 
@@ -62,7 +64,7 @@ class DeckController < ApplicationController
 
   def create_note
     puts "params:", params
-    @note = Note.create(params.require(:note).permit(:title,:content))
+    @note = Note.create(params.require(:note).permit(:title,:content,:job_id))
     @note.save()
   end
 

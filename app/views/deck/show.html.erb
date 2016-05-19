@@ -128,12 +128,12 @@
     </p>
   </section>
   <!-- Location -->
-  <div class="scrollable-section" data-section-title="Location">
-  </div>
-  <section class="capp-well">
+  <!-- <div class="scrollable-section" data-section-title="Location">
+  </div> -->
+  <!-- <section class="capp-well">
     <h1 class="section-main-header">Resume</h1>
     <h2 class="job-at-company job-at-company-location">Job at Company</h2>
-  </section>
+  </section> -->
   <!-- Notes -->
   <div class="scrollable-section" data-section-title="Notes">
   </div>
@@ -169,7 +169,9 @@
     <h2 class="job-at-company">Job at Company</h2>
     <p class="notes-p section-user-info">
 
-
+      <% @notes.each do |note| %>
+     <p> <%= note.content %> </p>
+      <% end %>
 
     </p>
   </section>
