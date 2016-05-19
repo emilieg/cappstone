@@ -6,7 +6,7 @@
 
 $(document).ready(function(){
   $.ajax({
-    url: { 'dashboard/deck/:id',
+    url: 'dashboard/deck/:id',
       method: 'PUT',
     data: {
       Job.update(
