@@ -80,7 +80,13 @@
     <div id="modal2" class="modal">
       <div class="modal-content">
 
-
+        <% @contacts.each do |contact| %>
+        <p> <%= contact.name %> </p>
+        <p> <%= contact.title %> </p>
+        <p> <%= contact.phone %> </p>
+        <p> <%= contact.email %> </p>
+        <p> <%= contact.linkedin %> </p>
+      <% end %>
 
 
         <!-- <form class="Company" action="">
@@ -110,13 +116,15 @@
     <a class="waves-effect waves-light btn modal-trigger2 edit-button-style" href="#modal3">Add Event</a>
     <!-- Modal Structure -->
     <div id="modal3" class="modal">
-      <div class="modal-content">
-        <form class="Company" action="">
+
+
+
+        <!-- <form class="Company" action="">
           Date: <input type="text" name="date" value=""><br>
           Event: <input type="text" name="event" value=""><br>
           <input type="submit" value="Submit">
-        </form>
-      </div>
+        </form> -->
+      <!-- </div> -->
       <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
       </div>
@@ -124,9 +132,9 @@
     <!-- Modal End -->
     <h2 class="job-at-company">Job at Company</h2>
     <p class="section-user-info">
-       <% @events.each do |event| %>
-     <p> <%= event.title %> </p>
-     <p> <%= event.description %> </p>
+      <% @events.each do |event| %>
+        <p> <%= event.title %> </p>
+        <p> <%= event.description %> </p>
       <% end %>
     </p>
   </section>

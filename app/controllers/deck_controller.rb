@@ -28,6 +28,9 @@ class DeckController < ApplicationController
     @notes = Note.where(:job_id => @job.id)
     @events = Event.new
     @events = Event.where(:job_id => @job.id)
+    @contacts = Contact.where(:company_id => @job.company_id)
+
+
 
     #if user id matches the user id on session and job
     # @company = Company.all
@@ -60,6 +63,7 @@ class DeckController < ApplicationController
     redirect_to dashboard_path
   end
 
+#### Note Methods
   def new_note
     @note = Note.new
   end
@@ -69,6 +73,20 @@ class DeckController < ApplicationController
     @note = Note.create(params.require(:note).permit(:title,:content,:job_id))
     @note.save()
   end
+
+
+#### Event Methods
+  def new_event
+    @events = Event.new
+
+  end
+
+  def create_event
+    @events = Event.create(params.require(:event).permit(:title,:description,:address,:job_id))
+
+  end
+
+
 
   private
   def job_params
@@ -82,8 +100,5 @@ class DeckController < ApplicationController
   def note_params
     params.permit(:title,:content,:job_id,:created_at,:updated_at)
   end
-
-
-
 
 end
