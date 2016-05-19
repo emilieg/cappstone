@@ -47,10 +47,7 @@ Rails.application.routes.draw do
   get 'deck/new' => 'deck'
   post 'deck/new' => 'deck#new'
   get '/deck' => 'deck#show'
-<<<<<<< HEAD
 
-=======
->>>>>>> e10fbf2fcd67e94be5fc0f30aab188d874b18bad
 
   get 'auth/login' => 'auth#login'
   get 'auth/logout' => 'auth#logout'
