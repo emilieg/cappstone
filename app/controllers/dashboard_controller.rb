@@ -2,7 +2,8 @@ class DashboardController < ApplicationController
   #dashboard will show a list of jobs under that user
   #future: remove old jobs from this list (make inactive?)
   before_action :is_authenticated?
-  
+
+
   require 'google/apis/calendar_v3'
   require 'googleauth'
   require 'googleauth/stores/file_token_store'
@@ -25,7 +26,7 @@ class DashboardController < ApplicationController
     client_id, SCOPE, token_store)
     user_id = 'a'
     credentials = authorizer.get_credentials(user_id)
-    
+
     if credentials.nil?
       url = authorizer.get_authorization_url(
         base_url: OOB_URI)
@@ -45,9 +46,10 @@ class DashboardController < ApplicationController
 
 
 
+
   def show
     @jobs = Job.all
-    @job = Job.where(user_id: 2) 
+    @job = Job.where(user_id: 2)
     @company = Company.all
 
     # Initialize the API
@@ -55,7 +57,7 @@ class DashboardController < ApplicationController
     service.client_options.application_name = APPLICATION_NAME
     service.authorization = authorize
     # credentials = :user_id
-        
+
     # Fetch the next 10 events for the user
     calendar_id = 'primary'
     @response = service.list_events(calendar_id,
@@ -76,7 +78,11 @@ class DashboardController < ApplicationController
       @appointment = event.summary
       puts "- #{event.summary} (#{@start})"
       puts "-#{event.start.date}"
-    end   
+    end
+  end
+
+  def new
+     @job = Job.new
   end
 
 
