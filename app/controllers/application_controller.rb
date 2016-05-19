@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   def is_authenticated?
   	# if current_user is not valid, create flash message and redirect to home page
     unless current_user
-
+      puts unless current_user
       puts "testing current_user"
         
 		flash[:danger] = "You are not logged in. Please log in."
@@ -16,6 +16,5 @@ class ApplicationController < ActionController::Base
 
   def current_user
   	@current_user ||= User.find_by_id(session[:user_id])
-    puts "app_controller", @current_user
   end
 end
