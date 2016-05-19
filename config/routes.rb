@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
- 
+  # get 'resumes/index'
+
+  get 'resumes/new' => 'resumes#new'
+
+  get 'resumes/create' => 'resumes#create'
+
+  # get 'resumes/destroy'
+
+  # get 'auth/logout'
 
   get 'calendar/add'
 
@@ -14,13 +22,9 @@ Rails.application.routes.draw do
   get 'signup' => 'user#new'
   post 'signup' => 'user#create'
 
-<<<<<<< HEAD
   # get 'login' => 'sessions#new'
   # post 'login' => 'session#create'
   # get 'logout' => 'sessions#destroy'
-
-
-
 
   get 'dashboard/deck/new' => 'deck#new'
   get 'dashboard/deck/:id' => 'deck#show'
@@ -32,14 +36,11 @@ Rails.application.routes.draw do
 
   get 'deck/show' => 'deck#show'
 
-
-=======
   get 'dashboard/deck/:id' => 'deck#show'
   get 'dashboard/deck/new' => 'deck#new'
   get 'deck/new' => 'deck'
   post 'deck/new' => 'deck#new'
   get '/deck' => 'deck#show'
->>>>>>> 5f4d204f310a12599de32015867aff60cc872130
 
   get 'auth/login' => 'auth#login'
   get 'auth/logout' => 'auth#logout'
@@ -105,4 +106,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  resources :resumes, only: [:index, :new, :create, :destroy]
 end

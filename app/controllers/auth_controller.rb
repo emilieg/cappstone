@@ -29,7 +29,9 @@ class AuthController < ApplicationController
   		u.email = data[:email]
   	end
 
-
+    puts "auth callback", user
+    puts "auth callback", user.name
+    puts "auth callback", user.email
 
   	#attach a user id to the current session
   	session[:user_id] = user.id
