@@ -32,7 +32,7 @@ class DashboardController < ApplicationController
     puts encoded_url
 
     puts 'access_token'
-    puts session[:acces]
+    puts session[:access]
 
     puts "About to make call to Google Calendar API...Hooray!!!"
 
