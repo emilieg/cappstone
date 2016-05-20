@@ -59,7 +59,7 @@ class DeckController < ApplicationController
     @contact = Contact.new(contact_params)
     @contact.save()
 
-    redirect_to dashboard_path
+    redirect_to deck_show
   end
 
 #### Note Methods
