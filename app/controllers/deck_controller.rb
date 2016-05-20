@@ -22,7 +22,6 @@ class DeckController < ApplicationController
     @note.update_attributes(params.permit(:title,:content))
   end
 
-
   def show
     ### Placeholder users not tied to jobs, replace :position => "Front-end Developer" with :job_id
     @job = Job.find(params[:id])
@@ -34,29 +33,17 @@ class DeckController < ApplicationController
     @events = Event.where(:job_id => @job.id)
     @contacts = Contact.where(:company_id => @job.company_id)
 
-
-    #if user id matches the user id on session and job
-    # @company = Company.all
-
-    # @events = Event.all
-    # # @event_type = EventType.all
-    # @contacts = Contact.all
-    # @note = Note.all
-
   end
-
 
   def edit
     @job = Job.find(params[:id])
     @contact = Contact.find(params[:id])
   end
 
-
   def new
     @job = Job.new
     @contact = Contact.new
   end
-
 
   def create
     company = Company.find_or_create_by(name: params[:company])
@@ -102,8 +89,6 @@ class DeckController < ApplicationController
     @events = Event.create(params.require(:event).permit(:title,:description,:address,:job_id))
     redirect_to deck_show
   end
-
-
 
   private
   def job_params

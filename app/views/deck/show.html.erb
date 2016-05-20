@@ -155,13 +155,6 @@
       <% end %>
     </p>
   </section>
-  <!-- Location -->
-  <!-- <div class="scrollable-section" data-section-title="Location">
-  </div> -->
-  <!-- <section class="capp-well">
-    <h1 class="section-main-header">Resume</h1>
-    <h2 class="job-at-company job-at-company-location">Job at Company</h2>
-  </section> -->
   <!-- Notes -->
   <div class="scrollable-section" data-section-title="Notes">
   </div>
@@ -195,15 +188,10 @@
 
     <!-- Modal End -->
 
-
-    <p class="notes-p section-user-info">
-
       <% @notes.each do |note| %>
-      <p class="section-user-info event-note-margin "> <%= note.title %> </p>
-     <p class="section-user-info event-note-margin "> <%= note.content %> </p>
+        <p class=" event-note-margin "> <%= note.title %> </p>
+        <p class="section-user-info event-note-margin "> <%= note.content %> </p>
       <% end %>
-
-    </p>
   </section>
 </div>
 <script type="text/javascript">
