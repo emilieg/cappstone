@@ -1,28 +1,32 @@
 Rails.application.routes.draw do
 
   root 'main#index'
-
   get 'resumes/new' => 'resumes#new'
+  post 'resumes/create/:id' => 'resumes#create'
   get 'resumes/create' => 'resumes#create'
 
   get 'calendar/add'
   get 'calendar/edit'
 
+  get 'signup' => 'user#new'
+  post 'signup' => 'user#create'
+
   get 'dashboard' =>'dashboard#show'
   get 'dashboard/deck/new' => 'deck#new'
   get 'dashboard/deck/:id' => 'deck#show'
   put 'dashboard/deck/:id' => 'deck#update'
-  post 'dashboard/deck' => 'deck#create'
-
-  post 'dashboard/deck' => 'deck#create'
-  post 'deck/contact' => 'deck#create_contact'
-  post 'deck/note' => 'deck#create_note'
-  post 'deck/event' => 'deck#create_event'
-
+  get 'dashboard/deck/:id' => 'deck#show'
+  post 'dashboard/deck/:id' => 'deck#add_to_deck'
+  get 'dashboard' =>'dashboard#show'
+  get 'dashboard/deck/new' => 'deck#new'
+  get 'dashboard/deck/:id' => 'deck#show'
+  put 'dashboard/deck/:id' => 'deck#update'
+  
   get 'auth/login' => 'auth#login'
   get 'auth/logout' => 'auth#logout'
   get 'auth/failure' => 'auth#failure'
   post 'auth/callback' => 'auth#callback'
+
 
   # get 'signup' => 'user#new'
   # post 'signup' => 'user#create'

@@ -24,6 +24,62 @@
           <%= f.text_field :comp_value %>
           <%= f.submit %>
         <% end %>
+        <!-- <form class="Company" action="deck/new">
+
+          Position: <input type="text" name="position" placeholder="front end dev" value='
+
+              <%= @job.position %>'>
+
+          Application Date: <input type="text" name="application-date" value=
+          "
+            <%= @job.apply_date %>
+          ">
+          Job Description URL: <input type="text" name="job-description" value="
+
+            <%= @job.job_description_url %>
+
+          "><br>
+          Company: <input type="text" name="company" value="
+
+          "><br>
+          Department: <input type="text" name="department" value="
+
+            <%= @job.department %>
+
+          "><br>
+          Address: <input type="text" name="address" value="
+            <%= @job.address %>
+          "><br>
+
+          Salary Amount: <input type="text" name="salary-amount" value="
+
+            <%= @job.comp_value %>
+
+          "><br>
+          Salary Type:
+          <p>
+            <input name="salary" type="radio" id="annual" />
+            <label for="annual">Annual</label>
+          </p>
+          <p>
+            <input name="salary" type="radio" id="hourly" />
+            <label for="hourly">Hourly</label>
+          </p>
+          <p>
+            <input name="salary" type="radio" id="monthly" />
+            <label for="monthly">Monthly</label>
+          </p>
+          Relocation Required:
+          <p>
+            <input name="relo" type="radio" id="relo-yes" />
+            <label for="relo-yes">Yes</label>
+          </p>
+          <p>
+            <input name="relo" type="radio" id="relo-no" />
+            <label for="relo-no">No</label>
+          </p>
+          <input type="submit" value="Submit">
+        </form> -->
       </div>
       <div class="modal-footer">
         <span class=" modal-action modal-close waves-effect waves-green btn-flat"> Close </span>
@@ -79,27 +135,12 @@
     <!-- Modal Structure -->
     <div id="modal2" class="modal">
       <div class="modal-content">
-
-        <%= form_for @contact, url:{:action => :create_contact}, :method => 'post' do |f|%>
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-          <%= f.label :title %>
-          <%= f.text_field :title %>
-          <%= f.label :phone %>
-          <%= f.text_field :phone %>
-          <%= f.label :email %>
-          <%= f.text_field :email %>
-          <%= f.label :linkedin %>
-          <%= f.text_field :linkedin %>
-          <%= f.hidden_field :company_id, :value => @job.id %>
-          <%= f.submit %>
-      <% end %>
-        <!-- <form class="Company" action="">
+        <form class="Company" action="">
           Name: <input type="text" name="name" value=""><br>
           Number: <input type="text" name="number" value=""><br>
           EMail: <input type="text" name="email" value=""><br>
           <input type="submit" value="Submit">
-        </form> -->
+        </form>
       </div>
       <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
@@ -108,13 +149,9 @@
     <!-- Modal End -->
     <h2 class="job-at-company">Job at Company</h2>
     <div class="container">
-      <% @contacts.each do |contact| %>
-        <p class="section-user-info"> <%= contact.name %> </p>
-        <p class="section-user-info"> <%= contact.title %> </p>
-        <p class="section-user-info"> <%= contact.phone %> </p>
-        <p class="section-user-info"> <%= contact.email %> </p>
-        <p class="section-user-info"> <%= contact.linkedin %> </p>
-      <% end %>
+    <p class="section-user-info">
+
+    </p>
   </section>
   <!-- Events -->
   <div class="scrollable-section" data-section-title="Events">
@@ -125,35 +162,46 @@
     <a class="waves-effect waves-light btn modal-trigger2 edit-button-style" href="#modal3">Add Event</a>
     <!-- Modal Structure -->
     <div id="modal3" class="modal">
-
-      <%= form_for @event, url:{:action => :create_event}, :method => 'post' do |f|%>
-          <%= f.label :title %>
-          <%= f.text_field :title %>
-          <%= f.label :description %>
-          <%= f.text_field :description %>
-          <%= f.label :address %>
-          <%= f.text_field :address %>
-          <%= f.hidden_field :job_id, :value => @job.id %>
-          <%= f.submit %>
-      <% end %>
-
-        <!-- <form class="Company" action="">
+      <div class="modal-content">
+        <form class="Company" action="">
           Date: <input type="text" name="date" value=""><br>
           Event: <input type="text" name="event" value=""><br>
           <input type="submit" value="Submit">
-        </form> -->
-      <!-- </div> -->
+        </form>
+      </div>
       <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
       </div>
     </div>
     <!-- Modal End -->
+    <h2 class="job-at-company">Job at Company</h2>
     <p class="section-user-info">
-      <% @events.each do |event| %>
-        <p class="section-user-info event-note-margin "> <%= event.title %> </p>
-        <p class="section-user-info event-note-margin "> <%= event.description %> </p>
-      <% end %>
+
     </p>
+  </section>
+  <!-- Location -->
+  <div class="scrollable-section" data-section-title="Resume">
+  </div>
+  <section class="capp-well">
+    <h1 class="section-main-header">Resume</h1>
+    <h2 class="job-at-company job-at-company-location">Select the resume you used</h2>
+    <a class="waves-effect waves-light btn modal-trigger edit-button-style" href="#modal4">Select</a>
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <!-- <form class="Company" action=""> -->
+         Resumes:
+         <%= form_for :resume do |r| %>
+          <% @resumes.each do |r| %>
+          <%= hidden_field :resume_id, :value => r.id %>
+          <div>
+            <%= r.name  %>
+            <%= button_to "Select", controller: "deck", action: "add_to_deck", resume_id: r.id, class: "btn" %>
+          </div>
+          <% end %>
+          <% end %>
+        <!-- </form> -->
+      </div>
+    </div>
   </section>
   <!-- Notes -->
   <div class="scrollable-section" data-section-title="Notes">
@@ -161,25 +209,14 @@
   <section class="capp-well">
     <h1 class="section-main-header">Notes</h1>
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger2 edit-button-style" href="#modal4">Add Note</a>
+    <a class="waves-effect waves-light btn modal-trigger2 edit-button-style" href="#modal3">Add Note</a>
     <!-- Modal Structure -->
-    <div id="modal4" class="modal">
+    <div id="modal3" class="modal">
       <div class="modal-content">
-
-      <%= form_for @note, url:{:action => :create_note}, :method => 'post' do |f|%>
-          <%= f.label :title %>
-          <%= f.text_field :title %>
-          <%= f.label :content %>
-          <%= f.text_field :content %>
-          <%= f.hidden_field :job_id, :value => @job.id %>
-          <%= f.submit %>
-      <% end %>
-
-
-        <!-- <form class="Company" action="">
+        <form class="Company" action="">
           Note: <input type="text" name="note" value=""><br>
           <input type="submit" value="Submit">
-        </form> -->
+        </form>
       </div>
       <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
@@ -188,10 +225,12 @@
 
     <!-- Modal End -->
 
-      <% @notes.each do |note| %>
-        <p class=" event-note-margin "> <%= note.title %> </p>
-        <p class="section-user-info event-note-margin "> <%= note.content %> </p>
-      <% end %>
+    <h2 class="job-at-company">Job at Company</h2>
+    <p class="notes-p section-user-info">
+
+
+
+    </p>
   </section>
 </div>
 <script type="text/javascript">
@@ -201,5 +240,3 @@
     $('.modal-trigger2').leanModal();
   });
 </script>
-
-
