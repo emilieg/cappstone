@@ -9,6 +9,8 @@ class DeckController < ApplicationController
     @job = Job.find(params[:id])
     @job.update_attributes(params.require(:job).permit(:position,:apply_date, :job_description_url, :company_name, :department, :comp_value, :comp_type, :relocation, :address, :user_id, :company_id, :created_at, :updated_at))
     redirect_to dashboard_path
+    @contact = Contact.find(params[:id])
+    @contact.update_attributes(params.require(:name).permit(:title, :phone, :email, :linkedin))
   end
 
   def updateContacts
@@ -24,7 +26,9 @@ class DeckController < ApplicationController
   def show
     ### Placeholder users not tied to jobs, replace :position => "Front-end Developer" with :job_id
     @job = Job.find(params[:id])
+    @company = Company.where(:company_id => @job.company_id)
     @note = Note.new
+    @contact = Contact.new
     @notes = Note.where(:job_id => @job.id)
     @event = Event.new
     @events = Event.where(:job_id => @job.id)
@@ -44,11 +48,13 @@ class DeckController < ApplicationController
 
   def edit
     @job = Job.find(params[:id])
+    @contact = Contact.find(params[:id])
   end
 
 
   def new
     @job = Job.new
+    @contact = Contact.new
   end
 
 
@@ -74,6 +80,15 @@ class DeckController < ApplicationController
     puts "params:", params
     @note = Note.create(params.require(:note).permit(:title,:content,:job_id))
     @note.save()
+  end
+
+  def new_contact
+    @contact = Contact.new
+  end
+
+  def create_contact
+    @contact = Contact.create(params.require(:contact).permit(:name, :title, :phone, :email,:linkedin))
+    @contact.save()
   end
 
 

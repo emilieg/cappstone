@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   # get 'deck' => 'deck#index'
 
 
-
+  post 'deck/contact' => 'deck#create_contact'
   post 'deck/note' => 'deck#create_note'
 
   post 'deck/event' => 'deck#create_event'
