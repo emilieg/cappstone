@@ -19,6 +19,15 @@ body {
   margin-bottom: -30px;
 }
 
+.new-form-img {
+  background-image: url('../assets/grey-meeting.jpg');
+}
+
+.new-job {
+  color: white;
+  margin-top: -25px;
+  margin-bottom: 60px;
+}
 
 .capp-well {
   background-color: #CC342E;
@@ -64,6 +73,11 @@ body {
 .notes-p {
   margin: 10%;
   font-size: 20px;
+}
+
+.new-sub-button {
+  background-color: #CC342E;
+  border-color: white;
 }
 
 /*.modal-content {
