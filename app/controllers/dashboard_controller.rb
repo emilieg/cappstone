@@ -1,28 +1,23 @@
 
 class DashboardController < ApplicationController
-  #dashboard will show a list of jobs under that user
-  #future: remove old jobs from this list (make inactive?)
-  # before_action :is_authenticated?
+  before_action :current_user
+  before_action :is_authenticated?
+
 
   require 'google/apis/calendar_v3'
   require 'googleauth'
   require 'googleauth/stores/file_token_store'
-  require 'net/http'
+  # require 'net/http'
   require 'fileutils'
   require 'rest-client'
   require 'net/http'
   require 'uri'
 
-  OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'
-  APPLICATION_NAME = 'cappstone'
-  CLIENT_SECRETS_PATH = 'client_secret.json'
-  CREDENTIALS_PATH = File.join(Dir.home, '.credentials',
-                               "cappstone.yaml")
-  SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR
 
   def show
     @jobs = Job.all
-    @job = Job.where(user_id: 2)
+    # @job = Job.where(user_id: session[:user_id])
+    @job = Job.where(user_id: 1)
     @company = Company.all
 
     # Initialize the API
@@ -38,6 +33,7 @@ class DashboardController < ApplicationController
     maxResults = 10
     encoded_url = URI.encode('https://www.googleapis.com/calendar/v3/calendars/' + email + '/events?timeMin=' + timeMin)
 
+
     puts "About to make call to Google Calendar API...Hooray!!!"
 
     response = RestClient::Request.execute(
@@ -47,36 +43,20 @@ class DashboardController < ApplicationController
 
     @response = JSON.parse(response)
     puts "Calendar API response"
-    puts @response['summary']
 
-      ###  Writes results to console ###
-    #   puts @response.summary
-    #   puts "Upcoming events:"
-    #   puts "No upcoming events found" if @response.items.empty?
-    #   ### This is the data that the controller would need to return and pass into views
-    #   @result = @response.items
-    #   @response.items.each do |event|
-    #   @start = event.start.date
-    #   @time = event.start.date_time
-    #   @appointment = event.summary
-    #   puts "- #{event.summary} (#{@start})"
-    #   puts "-#{event.start.date}"
-    # end
-      puts @response['summary']
-      puts "Upcoming events:"
-      puts "No upcoming events found"
 
-    if @response['items'].empty?
+
+    # if @response['items'].empty?
       ### This is the data that the controller would need to return and pass into views
       @result = @response['items']
+
+    
         @response['items'].each do |event|
-          @start = event['start']['date']
-          @time = event['start']['date_time']
-          @appointment = event['summary']
-          puts "- #{event.summary} (#{@start})"
-          puts "-#{event.start.date}"
+          @event_name =  event['summary']
+          @location = event['location']
+          @appointment = event['start']['dateTime']
+
         end
-    end
   end
 
 #            <% @result.each do |event| %>
@@ -86,7 +66,7 @@ class DashboardController < ApplicationController
 #               <td><%= event.summary %></td>
 #               <td><%= event.location %></td>
 #             <%end%>
-  
+
   def new
      @job = Job.new
   end
@@ -96,11 +76,6 @@ class DashboardController < ApplicationController
   def job_params
     params.require(:job).permit(:job_position,:company_name, :user_id)
   end
-
-
-
-
-
 
 
 end

@@ -1,68 +1,61 @@
-<div class="container">
-  <div class="row">
-    <div class="col s6">
-    </div>
-  </div>
-    <div class="row">
-      <div class="col s12">
-        <div id="current-time">
-        <% time = Time.new %>
-        <%= time.year %>
-        <%= time.strftime("%A,") %>
-        <%= time.strftime("%B,") %>
-        <%= time.strftime("%d") %>
+
+<div class="container dashboard-body">  
+  <div class="row time-cal">
+    <div class="col 12 grey-box z-depth-2">
+      <div class="col s3">
+        <div id="current-time">  
+          <% time = Time.new %>
+          <p class="year time"><%= time.year%></p>        
+          <p class="date time"><%= time.strftime("%d")%></p>
+          <p class="month time"><%=time.strftime("%B")%></p>
+          <p class="day time"><%= time.strftime("%a,")%> </p>
         </div>
+      </div>
+      
       <!-- THIS IS THE CALENDAR -->
-      <div id="calendar">
-      <table class="highlight responsive-table">
-        <thead>
-          <tr>
-              <th data-field="id">Date</th>
-              <th data-field="time">Time</th>
-              <th data-field="name">Event</th>
-              <th data-field="location">Location</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-
-        <% @result.each do |event| %>
-        <% @dt = event.start.date_time  %>
-          <td><%= @dt.strftime('%B %d, %Y')%></td>
-          <td><%= @dt.strftime('%I:%M %p') %></td>
-          <td><%= event.summary %></td>
-          <td><%= event.location %></td>
-          </tr>
-        <%end%>
-
-
-          </tr>
-
-        </tbody>
-      </table>
+      <div class="col s9">
+        <div id="calendar" class="scrollable-section">
+          <table class="bordered responsive-table">
+            <thead>
+              <tr>
+                <th data-field="id">Date</th>
+                <th data-field="time">Time</th>
+                <th data-field="name">Event</th>
+                <th data-field="location">Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @response['items'].each do |event| %>
+                <tr>
+                  <% @appointment = event['start']['dateTime'] %>
+                  <td><%= @appointment.to_date.strftime("%B %d, %Y") %></td>
+                  <td><%= @appointment.to_time.strftime('%H:%M')%></td>
+                  <td><%= event['summary'] %></td>
+                  <td><%= event['location'] %></td>
+                </tr>    
+              <%end%>   
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-<div class="row">
-  <div class="col s12">
-    <div class="collection">
-      <% @job.each do |job| %>
-      <% @company.each do |company|  %>
-      <a href="/dashboard/deck/<%=job.id%>" class="collection-item"><%= job.position %> <%= company.name %></a>
-      <% end %>
-      <% end %>
-    </div>
+
+  <div class="row">  
+    <div class="col s6">    
+        <h4>Active Jobs<a href="/dashboard/deck/new" class="btn-floating btn-medium waves-effect waves-light red" id="add-new-job"><i class="material-icons" >add</i></a> </h4>
+        <% @job.each do |job| %>
+          <% @company.each do |company| %>
+            <p><a href="/dashboard/deck/<%= job.id %>" class="job-description"><i class="small material-icons deck-lk">view_module</i><%= job.position %> <%= company.name %></a></p>
+          <% end %>
+        <% end %>
+    </div>  
   </div>
-</div>
-<div class="row">
-  <div class="col s12">
-    <a href="" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-  </div>
-</div>
+</div> 
 
 
 
-</div>
+
 
 
 
