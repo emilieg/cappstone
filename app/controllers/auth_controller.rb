@@ -3,6 +3,8 @@ class AuthController < ApplicationController
 
   def logout
   	session[:user_id] = nil
+    session[:access_token] = nil
+    session[:email] = nil
 
     return '200'
   	# redirect_to root_path
@@ -23,14 +25,25 @@ class AuthController < ApplicationController
       puts 'data:'
       puts data
 
+
   	user = User.find_or_create_by(provider_id: data[:user_id], provider: data[:provider]) do |u|
   		u.provider_hash = data[:provider_hash]
   		u.name = data[:name]
   		u.email = data[:email]
   	end
 
+    user = User.find_or_create_by(provider_id: data[:provider_id])
+
+      puts user
+      user.update(provider_hash: data[:provider_hash], name: data[:name], email:data[:email])
+  # presence: true,
+  # uniqueness: {case_sensitive: false}  user.save
+
+
   	#attach a user id to the current session
   	session[:user_id] = user.id
+    session[:access_token] = user.provider_hash
+    session[:email] = user.email
     @current_user = user
 
   	# redirect the user to the hompage

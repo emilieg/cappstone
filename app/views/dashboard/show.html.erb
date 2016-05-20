@@ -25,6 +25,7 @@
         </thead>
         <tbody>
           <tr>
+
         <% @result.each do |event| %>
         <% @dt = event.start.date_time  %>
           <td><%= @dt.strftime('%B %d, %Y')%></td>
@@ -33,6 +34,10 @@
           <td><%= event.location %></td>
           </tr>
         <%end%>
+
+
+          </tr>
+
         </tbody>
       </table>
       </div>
@@ -43,7 +48,7 @@
     <div class="collection">
       <% @job.each do |job| %>
       <% @company.each do |company|  %>
-      <a href="/deck" class="collection-item"><%= job.position %> <%= company.name %></a>
+      <a href="/dashboard/deck/<%=job.id%>" class="collection-item"><%= job.position %> <%= company.name %></a>
       <% end %>
       <% end %>
     </div>
