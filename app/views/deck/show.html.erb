@@ -80,13 +80,7 @@
     <div id="modal2" class="modal">
       <div class="modal-content">
 
-        <% @contacts.each do |contact| %>
-        <p> <%= contact.name %> </p>
-        <p> <%= contact.title %> </p>
-        <p> <%= contact.phone %> </p>
-        <p> <%= contact.email %> </p>
-        <p> <%= contact.linkedin %> </p>
-      <% end %>
+
 
 
         <!-- <form class="Company" action="">
@@ -104,7 +98,13 @@
     <h2 class="job-at-company">Job at Company</h2>
     <div class="container">
     <p class="section-user-info">
-
+      <% @contacts.each do |contact| %>
+        <p> <%= contact.name %> </p>
+        <p> <%= contact.title %> </p>
+        <p> <%= contact.phone %> </p>
+        <p> <%= contact.email %> </p>
+        <p> <%= contact.linkedin %> </p>
+      <% end %>
     </p>
   </section>
   <!-- Events -->
