@@ -18,7 +18,7 @@ class DashboardController < ApplicationController
     @company = Company.all
 
     email = session[:email]
-    timeMin = '2016-05-20T08:01:09'  #Time.now.iso8601
+    timeMin = Time.now.iso8601
     maxResults = 10
 
     puts 'EMAIL FROM SESSION'
@@ -31,6 +31,9 @@ class DashboardController < ApplicationController
 
     puts 'encoded_url'
     puts encoded_url
+
+    puts 'access_token'
+    puts session[:access_token]
 
     puts "About to make call to Google Calendar API...Hooray!!!"
 
