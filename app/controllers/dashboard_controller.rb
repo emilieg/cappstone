@@ -27,7 +27,7 @@ class DashboardController < ApplicationController
     puts 'TIME MIN'
     puts timeMin
 
-    encoded_url = URI.encode('https://www.googleapis.com/calendar/v3/calendars/' + email + '/events?timeMin=2016-05-03T10:00:00-07:00')
+    encoded_url = URI.encode('https://www.googleapis.com/calendar/v3/calendars/' + email + '/events?timeMin=2016-05-19T10:00:00-07:00')
     puts 'encoded_url'
     puts encoded_url
 
