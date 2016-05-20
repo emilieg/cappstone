@@ -1,13 +1,4 @@
 <h1>Upload a New Resume</h1>
-<% if !@resume.errors.empty? %>
-   <div>
-      <ul>
-         <% @resume.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-         <% end %>
-      </ul>
-   </div>
-<% end %>
 
 <div class = "well">
    <%= form_for @resume, html: { multipart: true } do |f| %>
