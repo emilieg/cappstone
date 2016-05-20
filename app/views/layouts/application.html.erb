@@ -56,6 +56,18 @@
       </div>
     </div>
   </footer>
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBn0vvsaVG9PrRZDvH2K3ojxYDNauyCaAQ",
+      authDomain: "cappstone.firebaseapp.com",
+      databaseURL: "https://cappstone.firebaseio.com",
+      storageBucket: "cappstone.appspot.com",
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
   <%= javascript_include_tag 'authorize', 'data-turbolinks-track' => true %>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
