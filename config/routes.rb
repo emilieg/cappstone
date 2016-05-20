@@ -25,10 +25,11 @@ Rails.application.routes.draw do
   get 'dashboard/deck/new' => 'deck#new'
   get 'dashboard/deck/:id' => 'deck#show'
   put 'dashboard/deck/:id' => 'deck#update'
+  post 'dashboard/deck' => 'deck#create'
 
-  get 'deck' => 'deck#index'
+  # get 'deck' => 'deck#index'
 
-  post 'deck' => 'deck#create'
+
 
   post 'deck/note' => 'deck#create_note'
 

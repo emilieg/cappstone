@@ -80,7 +80,21 @@
     <div id="modal2" class="modal">
       <div class="modal-content">
 
-
+         <%= form_for @job, url:{:action => "update", :controller => 'deck'}, :method => 'put' do |f|%>
+          <%= f.label :position %>
+          <%= f.text_field :position %>
+          <%= f.label :apply_date %>
+          <%= f.text_field :apply_date %>
+          <%= f.label :job_description_url %>
+          <%= f.text_field :job_description_url %>
+          <%= f.label :department %>
+          <%= f.text_field :department %>
+          <%= f.label :address %>
+          <%= f.text_field :address %>
+          <%= f.label :comp_value %>
+          <%= f.text_field :comp_value %>
+          <%= f.submit %>
+        <% end %>
 
 
         <!-- <form class="Company" action="">

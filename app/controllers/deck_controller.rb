@@ -53,7 +53,10 @@ class DeckController < ApplicationController
 
 
   def create
-    @job = Job.new(job_params)
+    company = Company.find_or_create_by(name: params[:company])
+
+    @job = company.job.new(job_params)
+
     @job.save()
 
     @contact = Contact.new(contact_params)
@@ -82,14 +85,14 @@ class DeckController < ApplicationController
 
   def create_event
     @events = Event.create(params.require(:event).permit(:title,:description,:address,:job_id))
-
+    redirect_to deck_show
   end
 
 
 
   private
   def job_params
-    params.permit(:position,:apply_date, :job_description_url, :company_name, :department, :comp_value, :comp_type, :relocation, :address, :user_id, :company_id, :created_at, :updated_at)
+    params.permit(:position,:apply_date, :job_description_url, :department, :comp_value, :comp_type, :relocation, :address, :user_id, :company_id, :created_at, :updated_at)
   end
 
   def contact_params
