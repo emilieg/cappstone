@@ -18,7 +18,7 @@ class DashboardController < ApplicationController
     @company = Company.all
 
     email = session[:email]
-    timeMin = Time.now.iso8601
+    timeMin = '2016-05-20T08:01:09'  #Time.now.iso8601
     maxResults = 10
 
     puts 'EMAIL FROM SESSION'
