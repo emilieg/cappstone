@@ -26,10 +26,9 @@ class DeckController < ApplicationController
     @job = Job.find(params[:id])
     @note = Note.new
     @notes = Note.where(:job_id => @job.id)
-    @events = Event.new
+    @event = Event.new
     @events = Event.where(:job_id => @job.id)
     @contacts = Contact.where(:company_id => @job.company_id)
-
 
 
     #if user id matches the user id on session and job

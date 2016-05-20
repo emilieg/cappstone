@@ -75,7 +75,7 @@
   <section class="capp-well">
     <h1 class="section-main-header">Contacts</h1>
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger2 edit-button-style" href="#modal2">Add Contact</a>
+    <a class="waves-effect waves-light btn modal-trigger2 edit-button-style" href="#modal2">Edit Contact</a>
     <!-- Modal Structure -->
     <div id="modal2" class="modal">
       <div class="modal-content">
@@ -117,7 +117,16 @@
     <!-- Modal Structure -->
     <div id="modal3" class="modal">
 
-
+      <%= form_for @event, url:{:action => :create_event}, :method => 'post' do |f|%>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+          <%= f.label :description %>
+          <%= f.text_field :description %>
+          <%= f.label :address %>
+          <%= f.text_field :address %>
+          <%= f.hidden_field :job_id, :value => @job.id %>
+          <%= f.submit %>
+      <% end %>
 
         <!-- <form class="Company" action="">
           Date: <input type="text" name="date" value=""><br>
@@ -161,6 +170,7 @@
           <%= f.text_field :title %>
           <%= f.label :content %>
           <%= f.text_field :content %>
+          <%= f.hidden_field :job_id, :value => @job.id %>
           <%= f.submit %>
       <% end %>
 

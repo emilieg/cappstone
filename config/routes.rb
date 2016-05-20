@@ -32,6 +32,8 @@ Rails.application.routes.draw do
 
   post 'deck/note' => 'deck#create_note'
 
+  post 'deck/event' => 'deck#create_event'
+
   get 'deck/show' => 'deck#show'
 
 
