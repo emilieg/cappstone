@@ -44,6 +44,7 @@ class DashboardController < ApplicationController
 
     @response = JSON.parse(response)
     puts "Calendar API response"
+    puts @response
 
     # if @response['items'].empty?
       ### This is the data that the controller would need to return and pass into views
