@@ -27,9 +27,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Gems added to the Cappstone project
 
-# Gem added for file uploading
-gem "carrierwave", "~> 0.9"
-
 # gem 'signet'
 gem 'google-api-client'
 gem 'rest-client'

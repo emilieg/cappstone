@@ -1,7 +1,6 @@
 require 'google/apis/calendar_v3'
 require 'googleauth'
 require 'googleauth/stores/file_token_store'
-# require 'google/api_client/client_secrets'
 
 require 'fileutils'
 
@@ -26,9 +25,7 @@ def authorize
   token_store = Google::Auth::Stores::FileTokenStore.new(file: CREDENTIALS_PATH)
   authorizer = Google::Auth::UserAuthorizer.new(
     client_id, SCOPE, token_store)
-
   user_id = 'emiliegerberharris@gmail.com'
-
   credentials = authorizer.get_credentials(user_id)
   if credentials.nil?
     url = authorizer.get_authorization_url(
@@ -36,7 +33,6 @@ def authorize
     puts "Open the following URL in the browser and enter the " +
          "resulting code after authorization"
     puts url
-
     code = gets
     credentials = authorizer.get_and_store_credentials_from_code(
       user_id: user_id, code: code, base_url: OOB_URI)
@@ -48,7 +44,6 @@ def authorize
 end
 
 # Initialize the API
-
 service = Google::Apis::CalendarV3::CalendarService.new
 service.client_options.application_name = APPLICATION_NAME
 service.authorization = authorize

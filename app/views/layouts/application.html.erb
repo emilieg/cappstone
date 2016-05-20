@@ -4,7 +4,7 @@
   <title>Cappstone</title>
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="google-signin-client_id" content="445102183395-rrj135djfovm97f34otvt54u7uah733l.apps.googleusercontent.com">
   <!-- Compiled and minified CSS -->
@@ -18,9 +18,11 @@
   <!-- Compiled and minified JavaScript -->
 </head>
 <body>
-  <div class="navbar-fixed">
+
+    <div class="navbar-fixed">
     <nav class="nav">
       <div class="nav-wrapper">
+
         <a href="/dashboard" class="brand-logo"> cappstone <i class="material-icons right">work</i></a>
         <ul class="right hide-on-med-and-down">
         <% if @current_user %>
@@ -32,6 +34,15 @@
           <li><button id="google_auth" class="waves-effect waves-light teal lighten-2 btn hide-on-med-and-down"> Log in </button></li>
           <!-- <div id="my-signin2" style="width: 240; height: 40;" data-scope="profile email https://www.googleapis.com/auth/calendar" data-onsuccess="onSuccess" data-onfailure="onFailure"></div> -->
         <% end %>
+
+        <a href="#!" class="brand-logo"> cappstone <i class="material-icons right">work</i></a>
+        <ul class="right hide-on-med-and-down">
+        <% if session[:user_id].present? %>
+           <li id="logged-in">Logged in as <strong><%= @current_user[:email] %></strong></li>
+           <li><a href="" class="waves-effect waves-light btn" onclick="signOut();"> Log out </a></li>
+         <% else %>
+           <li><div id="my-signin2" style="width: 240; height: 40;" data-scope="profile email https://www.googleapis.com/auth/calendar" data-onsuccess="onSuccess" data-onfailure="onFailure"></div></li>
+         <% end %>
         </ul>
       </div>
     </nav>
@@ -43,14 +54,12 @@
         Materialize.toast('<%= message %>', 3500, 'rounded');
       });
     </script>
-  <% end %>
+<% end %>
 
-  <main>
 
-    <%= yield %>
-
-  </main>
-
+<main>
+  <%= yield %>
+</main>
   <footer class="page-footer">
     <div class="footer-copyright">
       <div class="container">
@@ -58,18 +67,6 @@
       </div>
     </div>
   </footer>
-  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBn0vvsaVG9PrRZDvH2K3ojxYDNauyCaAQ",
-      authDomain: "cappstone.firebaseapp.com",
-      databaseURL: "https://cappstone.firebaseio.com",
-      storageBucket: "cappstone.appspot.com",
-    };
-    firebase.initializeApp(config);
-  </script>
-  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
   <%= javascript_include_tag 'authorize', 'data-turbolinks-track' => true %>
   <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
