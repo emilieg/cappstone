@@ -18,7 +18,7 @@ class DashboardController < ApplicationController
     @company = Company.all
 
     email = session[:email]
-    timeMin = Time.now.iso8601
+    timeMin =  '2016-05-03T10%3A00%3A00-07%3A00&key'  #Time.now.iso8601
     maxResults = 10
 
     puts 'EMAIL FROM SESSION'
@@ -27,13 +27,13 @@ class DashboardController < ApplicationController
     puts 'TIME MIN'
     puts timeMin
 
-    encoded_url = URI.encode('https://www.googleapis.com/calendar/v3/calendars/' + email + '/events?')
+    encoded_url = URI.encode('https://www.googleapis.com/calendar/v3/calendars/' + email + '/events?timeMin=' + timeMin)
 
     puts 'encoded_url'
     puts encoded_url
 
     puts 'access_token'
-    puts session[:access_token]
+    puts session[:acces]
 
     puts "About to make call to Google Calendar API...Hooray!!!"
 
