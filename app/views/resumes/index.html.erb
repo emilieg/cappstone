@@ -23,7 +23,7 @@
       <% @resumes.each do |resume| %>
          <tr>
             <td><%= resume.name %></td>
-            <td><%= link_to "Download Resume", resume.attachment %></td>
+            <td><%= link_to "Download Resume", resume.attachment_url %></td>
             <td><%= button_to "Delete", resume, method: :delete, class: "btn", confirm: "Are you sure that you wish to delete {#resume.name}?" %></td>
          </tr>
       <% end %>
