@@ -12,6 +12,8 @@ class ResumesController < ApplicationController
 
   def create
   	@resume = Resume.new(resume_params)
+    puts "RESUME ATTACHMENT NAME !!!"
+    puts @resume.attachment
   	if @resume.save
          redirect_to resumes_path, notice: "Resume labeled #{@resume.name} has been uploaded."
       else
@@ -30,3 +32,10 @@ class ResumesController < ApplicationController
       params.require(:resume).permit(:name, :attachment, :job_id)
    end
 end
+
+
+# <% if !flash[:notice].blank? %>
+#    <div class = "alert alert-info">
+#       <%= flash[:notice] %>
+#    </div>
+# <% end %>

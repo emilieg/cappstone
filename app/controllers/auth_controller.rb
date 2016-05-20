@@ -29,7 +29,8 @@ class AuthController < ApplicationController
     
       puts user
       user.update(provider_hash: data[:provider_hash], name: data[:name], email:data[:email])
-      user.save
+  # presence: true,
+  # uniqueness: {case_sensitive: false}  user.save
 
   	#attach a user id to the current session
   	session[:user_id] = user.id
