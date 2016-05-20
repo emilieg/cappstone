@@ -2,7 +2,7 @@
 class DashboardController < ApplicationController
   #dashboard will show a list of jobs under that user
   #future: remove old jobs from this list (make inactive?)
-  before_action :is_authenticated?
+  # before_action :is_authenticated?
 
   require 'google/apis/calendar_v3'
   require 'googleauth'
@@ -25,6 +25,12 @@ class DashboardController < ApplicationController
     @job = Job.where(user_id: 2)
     @company = Company.all
 
+    # Initialize the API
+    # service = Google::Apis::CalendarV3::CalendarService.new
+    # service.client_options.application_name = APPLICATION_NAME
+    # service.authorization = authorize
+    # credentials = :user_id
+
     #Call API using session[:access_token] in the request HTTP header
 
     email = session[:email]
@@ -44,6 +50,18 @@ class DashboardController < ApplicationController
     puts @response['summary']
 
       ###  Writes results to console ###
+    #   puts @response.summary
+    #   puts "Upcoming events:"
+    #   puts "No upcoming events found" if @response.items.empty?
+    #   ### This is the data that the controller would need to return and pass into views
+    #   @result = @response.items
+    #   @response.items.each do |event|
+    #   @start = event.start.date
+    #   @time = event.start.date_time
+    #   @appointment = event.summary
+    #   puts "- #{event.summary} (#{@start})"
+    #   puts "-#{event.start.date}"
+    # end
       puts @response['summary']
       puts "Upcoming events:"
       puts "No upcoming events found"
