@@ -75,7 +75,7 @@
   <section class="capp-well">
     <h1 class="section-main-header">Contacts</h1>
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger2 edit-button-style" href="#modal2">Edit Contact</a>
+    <a class="waves-effect waves-light btn modal-trigger2 edit-button-style" href="#modal2">Add Contact</a>
     <!-- Modal Structure -->
     <div id="modal2" class="modal">
       <div class="modal-content">
@@ -108,15 +108,13 @@
     <!-- Modal End -->
     <h2 class="job-at-company">Job at Company</h2>
     <div class="container">
-    <p class="section-user-info">
       <% @contacts.each do |contact| %>
-        <p> <%= contact.name %> </p>
-        <p> <%= contact.title %> </p>
-        <p> <%= contact.phone %> </p>
-        <p> <%= contact.email %> </p>
-        <p> <%= contact.linkedin %> </p>
+        <p class="section-user-info"> <%= contact.name %> </p>
+        <p class="section-user-info"> <%= contact.title %> </p>
+        <p class="section-user-info"> <%= contact.phone %> </p>
+        <p class="section-user-info"> <%= contact.email %> </p>
+        <p class="section-user-info"> <%= contact.linkedin %> </p>
       <% end %>
-    </p>
   </section>
   <!-- Events -->
   <div class="scrollable-section" data-section-title="Events">
@@ -150,11 +148,10 @@
       </div>
     </div>
     <!-- Modal End -->
-    <h2 class="job-at-company">Job at Company</h2>
     <p class="section-user-info">
       <% @events.each do |event| %>
-        <p> <%= event.title %> </p>
-        <p> <%= event.description %> </p>
+        <p class="section-user-info event-note-margin "> <%= event.title %> </p>
+        <p class="section-user-info event-note-margin "> <%= event.description %> </p>
       <% end %>
     </p>
   </section>
@@ -198,12 +195,12 @@
 
     <!-- Modal End -->
 
-    <h2 class="job-at-company">Job at Company</h2>
+
     <p class="notes-p section-user-info">
 
       <% @notes.each do |note| %>
-      <p> <%= note.title %> </p>
-     <p> <%= note.content %> </p>
+      <p class="section-user-info event-note-margin "> <%= note.title %> </p>
+     <p class="section-user-info event-note-margin "> <%= note.content %> </p>
       <% end %>
 
     </p>
