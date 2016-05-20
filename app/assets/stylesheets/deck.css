@@ -1,0 +1,119 @@
+/*Logo Font Idea*/
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+/*Well Font Idea*/
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+
+body {
+  background-color: #2A363B;
+ /* background-image: url('http://i694.photobucket.com/albums/vv309/pacalabre/photo-1432938248656-5be4e442a2ea.jpg');
+
+  background-attachment: fixed;*/
+}
+
+.color-layer {
+  background-color: #2A363B;
+  background-image:url('../assets/grey-city.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  height:100%;
+  margin-bottom: -30px;
+}
+
+.new-form-img {
+  background-image: url('../assets/grey-meeting.jpg');
+}
+
+.new-job {
+  color: white;
+  margin-top: -25px;
+  margin-bottom: 60px;
+}
+
+.capp-well {
+  background-color: #CC342E;
+  background-color: white;
+  margin: 10% 20% 20% 20%;
+  color: red;
+  height: 400px;
+/*  font-family: Oswald;*/
+  border: white solid;
+  overflow: scroll;
+}
+
+.capp-well-new {
+  height: 80%;
+}
+
+.nav {
+  background-color: #CC342E;
+}
+
+.section-main-header {
+  text-align: center;
+/*  font-family: righteous;*/
+  margin: 0px;
+  color: red;
+}
+
+.job-at-company {
+  margin: -33px 0px 10px 40%;
+  font-size: 30px;
+  color: red;
+}
+
+.job-at-company-location {
+  margin-top: 1px;
+  color: red;
+}
+
+.button {
+  margin: 10px 35%;
+}
+
+.notes-p {
+  margin: 10%;
+  font-size: 20px;
+}
+
+.new-sub-button {
+  background-color: #CC342E;
+  border-color: white;
+}
+
+/*.modal-content {
+  background-color: grey;
+}*/
+
+ /*Reusables*/
+.edit-button-style {
+  margin-left: 15px;
+  margin-top: -80px;
+}
+
+.scrollable-section {
+  height: 5px;
+}
+
+.left-float {
+  float: left;
+}
+
+.right-float {
+  float: right;
+}
+
+.section-h3 {
+  margin:0px 0px;
+  font-size: 25px;
+}
+
+.section-user-info {
+  margin: 0px 0px 20px 0px;
+  font-size: 15px;
+  color:black;
+}
+
+.event-note-margin {
+  margin-left: 25%;
+}
+

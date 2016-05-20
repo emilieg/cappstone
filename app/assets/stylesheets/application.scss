@@ -1,3 +1,4 @@
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +14,29 @@
  *= require_tree .
  *= require_self
  */
+
+#toast-container {
+  top: 80px;
+  left: auto;
+  right: 50px;;
+}
+
+.toast {
+  background-color: #2BBBAD;
+  width: 500px;
+  text-align: right;
+}
+
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 5vh;
+}
+
+#google_logout {
+  margin-left: 5px;
+}
+
+a {
+  font-family: 'Source Sans Pro', sans-serif;
+}
