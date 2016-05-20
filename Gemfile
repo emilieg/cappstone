@@ -27,7 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Gems added to the Cappstone project
 
-# gem 'signet'
+# Gem added for file uploading
+gem "carrierwave", "~> 0.9"
+
 gem 'google-api-client'
 gem 'rest-client'
 gem 'rails_12factor', group: :production
@@ -56,4 +58,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+source 'https://rubygems.org'
+
 
