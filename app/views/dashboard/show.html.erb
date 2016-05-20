@@ -28,6 +28,10 @@
               <% @response['items'].each do |event| %>
                 <tr>
                   <% @appointment = event['start']['dateTime'] %>
+
+                  <% puts 'HELLO APPOINTMENT !!! ' %>
+                  <% puts @appointment.to_date.strftime("%B %d, %Y") %>
+                  <% puts event['id'] %>
                   <td><%= @appointment.to_date.strftime("%B %d, %Y") %></td>
                   <td><%= @appointment.to_time.strftime('%H:%M')%></td>
                   <td><%= event['summary'] %></td>

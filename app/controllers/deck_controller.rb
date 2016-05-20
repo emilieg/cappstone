@@ -8,7 +8,7 @@ class DeckController < ApplicationController
   def update
     @job = Job.find(params[:id])
     @job.update_attributes(params.require(:job).permit(:position,:apply_date, :job_description_url, :company_name, :department, :comp_value, :comp_type, :relocation, :address, :user_id, :company_id, :created_at, :updated_at))
-    redirect_to dashboard_path
+    redirect_to :back
     # @contact = Contact.find(contact_params[:id])
     # @contact.update_attributes(params.require(:contact).permit(:name, :title, :phone, :email, :linkedin))
   end
