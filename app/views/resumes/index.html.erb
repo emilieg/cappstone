@@ -1,5 +1,9 @@
 <h1>Resumes</h1>
-
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
 
 <br />
 
@@ -17,11 +21,13 @@
    </thead> 
    <tbody>
       <% @resumes.each do |resume| %>
+         
          <tr>
             <td><%= resume.name %></td>
-            <td><%= link_to "Download Resume", resume.attachment_url %></td>
+            <td><%= link_to "Download Resume", resume.attachment %></td>
             <td><%= button_to "Delete", resume, method: :delete, class: "btn", confirm: "Are you sure that you wish to delete {#resume.name}?" %></td>
          </tr>
+         
       <% end %>
    </tbody>
 </table>

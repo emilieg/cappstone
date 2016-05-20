@@ -1,4 +1,3 @@
-
 <div class="container dashboard-body">  
     <div class="row time-cal">
     <div class="col 12 grey-box z-depth-2">
@@ -35,7 +34,7 @@
           </tr>  
         <%end%>     
         </tbody>
-      </table>
+      </table>              
       </div>
     </div>
     </div>
@@ -47,15 +46,13 @@
       <% @job.each do |job| %>
       <% @company.each do |company| %>
       <p><a href="/dashboard/deck/<%= job.id %>" class="job-description"><i class="small material-icons deck-lk">view_module</i><%= job.position %> <%= company.name %></a></p>
-      <% @company.each do |company|  %>
-      <a href="/dashboard/deck/<%=job.id%>" class="collection-item"><%= job.position %> <%= company.name %></a>
       <% end %>
       <% end %>
-    </div>  
+    </div>
+    
   </div>
 
 </div> 
-
 
 
 

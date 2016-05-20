@@ -26,14 +26,20 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Gems added to the Cappstone project
+gem "omniauth"
+gem "omniauth-google-oauth2"
+
+# Gem added for file uploading
+gem "carrierwave", "~> 0.9"
 
 # gem 'signet'
 gem 'google-api-client'
 gem 'rest-client'
-gem 'rails_12factor', group: :production
 
 gem 'pg'
 gem 'validates_phone_number'
+
+gem 'aws-sdk', '~> 2'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
