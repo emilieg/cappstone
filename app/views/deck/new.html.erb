@@ -1,53 +1,53 @@
-<%= form_tag( "/deck", method: "post") do %>
-  <h2>Position:</h2>
-  <%= text_field_tag (:position)%>
-  <h2>Application Date</h2>
-  <%= text_field_tag (:apply_date)%>
-  <h2>Job Description URL</h2>
-  <%= text_field_tag (:job_description_url)%>
-  <h2>Company</h2>
-  <h2>Department</h2>
-  <%= text_field_tag (:department)%>
-  <h2>Address</h2>
-  <%= text_field_tag (:address)%>
-  <h2>Salary Amount</h2>
-  <%= text_field_tag (:comp_value)%>
-    <p>
-      <input name="salary" type="radio" id="annual" />
-      <label for="annual">Annual</label>
-    </p>
-    <p>
-      <input name="salary" type="radio" id="hourly" />
-      <label for="hourly">Hourly</label>
-    </p>
-    <p>
-      <input name="salary" type="radio" id="monthly" />
-      <label for="monthly">Monthly</label>
-    </p>
-  <h2>Relocation</h2>
-  <p>
-    <input name="relo" type="radio" id="relo-yes" />
-    <label for="relo-yes">Yes</label>
-  </p>
-  <p>
-    <input name="relo" type="radio" id="relo-no" />
-    <label for="relo-no">No</label>
-  </p>
-  <input>
-  <h2>Contacts</h2>
-  <h5>Contact 1:</h5>
-    Name: <%= text_field_tag (:name)%>
-    Number: <%= text_field_tag (:phone)%>
-    Email: <%= text_field_tag (:email)%>
-  <!-- Right now only one contact imports -->
-  <h5>Contact 2:</h5>
-    Name: <%= text_field_tag (:name)%>
-    Number: <%= text_field_tag (:phone)%>
-    Email: <%= text_field_tag (:email)%>
-  <h2>Notes</h2>
-  <%= text_field_tag (:title)%>
-  <%= text_field_tag (:content)%>
-  <button type="submit">Submit</button>
-<!-- </form> -->
-<% end %>
+<div class="color-layer new-form-img">
+  <div class="container new-job ">
+    <%= form_tag( "/dashboard/deck", method: "post") do %>
+      <h2 >Position:</h2>
+      <%= text_field_tag (:position)%>
+      <h2>Application Date</h2>
+      <%= text_field_tag (:apply_date)%>
+      <h2>Job Description URL</h2>
+      <%= text_field_tag (:job_description_url)%>
+      <h2>Company</h2>
+      <%= text_field_tag (:company)%>
+      <h2>Department</h2>
+      <%= text_field_tag (:department)%>
+      <h2>Address</h2>
+      <%= text_field_tag (:address)%>
+      <h2>Salary Amount</h2>
+      <%= text_field_tag (:comp_value)%>
+       <!--  <p>
+          <input name="salary" type="radio" id="annual" />
+          <label for="annual">Annual</label>
+        </p>
+        <p>
+          <input name="salary" type="radio" id="hourly" />
+          <label for="hourly">Hourly</label>
+        </p>
+        <p>
+          <input name="salary" type="radio" id="monthly" />
+          <label for="monthly">Monthly</label>
+        </p> -->
+      <h2>Relocation</h2>
+      <p>
+        <input name="relo" type="radio" id="relo-yes" />
+        <label for="relo-yes">Yes</label>
+      </p>
+      <p>
+        <input name="relo" type="radio" id="relo-no" />
+        <label for="relo-no">No</label>
+      </p>
+      <input>
+      <h2>Contact</h2>
+        Name: <%= text_field_tag (:name)%>
+        Number: <%= text_field_tag (:phone)%>
+        Email: <%= text_field_tag (:email)%>
+      <h2>Notes</h2>
+      <%= text_field_tag (:title)%>
+      <%= text_field_tag (:content)%>
+      <%= hidden_field :user_id, :value => session[:user_id] %>
+      <button class="new-sub-button" type="submit">Submit</button>
+    <!-- </form> -->
+    <% end %>
+  </div>
+</div>
 

@@ -86,14 +86,6 @@ ActiveRecord::Schema.define(version: 20160516192801) do
 
   add_index "notes", ["job_id"], name: "index_notes_on_job_id", using: :btree
 
-  create_table "resumes", force: :cascade do |t|
-    t.integer  "job_id"
-    t.string   "name"
-    t.string   "attachment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "provider"
     t.string   "provider_id"

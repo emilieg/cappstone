@@ -1,11 +1,11 @@
-<div class="container">  
+<div class="container">
   <div class="row">
     <div class="col s6">
     </div>
   </div>
     <div class="row">
       <div class="col s12">
-        <div id="current-time">  
+        <div id="current-time">
         <% time = Time.new %>
         <%= time.year %>
         <%= time.strftime("%A,") %>
@@ -26,14 +26,25 @@
         <tbody>
           <tr>
 
-          </tr>       
+        <% @result.each do |event| %>
+        <% @dt = event.start.date_time  %>
+          <td><%= @dt.strftime('%B %d, %Y')%></td>
+          <td><%= @dt.strftime('%I:%M %p') %></td>
+          <td><%= event.summary %></td>
+          <td><%= event.location %></td>
+          </tr>
+        <%end%>
+
+
+          </tr>
+
         </tbody>
-      </table>              
+      </table>
       </div>
     </div>
   </div>
-<div class="row">  
-  <div class="col s12">      
+<div class="row">
+  <div class="col s12">
     <div class="collection">
       <% @job.each do |job| %>
       <% @company.each do |company|  %>
@@ -42,10 +53,10 @@
       <% end %>
     </div>
   </div>
-</div> 
+</div>
 <div class="row">
   <div class="col s12">
-    <a href="" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a> 
+    <a href="" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
   </div>
 </div>
 

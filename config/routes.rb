@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root 'main#index'
 
   get 'resumes/new' => 'resumes#new'
@@ -8,9 +9,10 @@ Rails.application.routes.draw do
 
   # get 'auth/logout'
 
+
   get 'calendar/add'
   get 'calendar/edit'
-  
+
 
   get 'auth/logout'
 
@@ -23,21 +25,51 @@ Rails.application.routes.draw do
   # post 'login' => 'session#create'
   # get 'logout' => 'sessions#destroy'
 
+
+
+
+
+
+
+
+  post 'dashboard/deck' => 'deck#create'
+
+  # get 'deck' => 'deck#index'
+
+
+  post 'deck/contact' => 'deck#create_contact'
+  post 'deck/note' => 'deck#create_note'
+
+  post 'deck/event' => 'deck#create_event'
+
   get 'dashboard' =>'dashboard#show'
   get 'dashboard/deck/new' => 'deck#new'
   get 'dashboard/deck/:id' => 'deck#show'
   put 'dashboard/deck/:id' => 'deck#update'
   get 'dashboard/deck/:id' => 'deck#show'
 
-  
+
 
   get 'dashboard' =>'dashboard#show'
+
+
+
+
+
+
+  get 'dashboard/deck/:id' => 'deck#show'
+  get 'dashboard/deck/new' => 'deck#new'
+  get 'deck/new' => 'deck'
+  post 'deck/new' => 'deck#new'
+  get '/deck' => 'deck#show'
+
 
 
   get 'dashboard/deck/new' => 'deck#new'
   get 'dashboard/deck/:id' => 'deck#show'
   put 'dashboard/deck/:id' => 'deck#update'
-  
+
+
   get 'auth/login' => 'auth#login'
   get 'auth/logout' => 'auth#logout'
   get 'auth/failure' => 'auth#failure'
@@ -98,6 +130,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  resources :resumes, only: [:index, :new, :create, :destroy]
 end
