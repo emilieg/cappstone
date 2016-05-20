@@ -21,14 +21,15 @@
   <div class="navbar-fixed">
     <nav class="nav">
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo"> cappstone <i class="material-icons right">work</i></a>
+        <a href="/dashboard" class="brand-logo"> cappstone <i class="material-icons right">work</i></a>
         <ul class="right hide-on-med-and-down">
         <% if @current_user %>
-          <li id="logged-in">Logged in as <strong><%= @current_user[:email] %></strong></li>
+          <li><i class="large material-icons">perm_identity</i></li>
+          <li id="logged-in"><%= @current_user[:email] %></li>
           <!-- <li><a href="" class="waves-effect waves-light btn" onclick="signOut();"> Log out </a></li> -->
-          <li><button id="google_logout" class="waves-effect waves-light teal lighten-2 btn"> Log out </button></li>
+          <li><button id="google_logout" class="waves-effect waves-light teal lighten-2 btn hide-on-med-and-down"> Log out </button></li>
         <% else %>
-          <li><button id="google_auth" class="waves-effect waves-light teal lighten-2 btn"> Log in </button></li>
+          <li><button id="google_auth" class="waves-effect waves-light teal lighten-2 btn hide-on-med-and-down"> Log in </button></li>
           <!-- <div id="my-signin2" style="width: 240; height: 40;" data-scope="profile email https://www.googleapis.com/auth/calendar" data-onsuccess="onSuccess" data-onfailure="onFailure"></div> -->
         <% end %>
         </ul>

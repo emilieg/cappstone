@@ -1,4 +1,4 @@
-<%= form_tag( "/deck", method: "post") do %>
+<%= form_tag( "/dashboard/deck", method: "post") do %>
   <h2>Position:</h2>
   <%= text_field_tag (:position)%>
   <h2>Application Date</h2>
@@ -47,6 +47,7 @@
   <h2>Notes</h2>
   <%= text_field_tag (:title)%>
   <%= text_field_tag (:content)%>
+  <%= hidden_field :user_id, :value => session[:user_id] %>
   <button type="submit">Submit</button>
 <!-- </form> -->
 <% end %>

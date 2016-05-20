@@ -26,7 +26,7 @@ body {
   margin: 10% 20% 20% 20%;
   color: red;
   height: 400px;
-  font-family: Oswald;
+/*  font-family: Oswald;*/
   border: white solid;
   overflow: scroll;
 }
@@ -41,7 +41,7 @@ body {
 
 .section-main-header {
   text-align: center;
-  font-family: righteous;
+/*  font-family: righteous;*/
   margin: 0px;
   color: red;
 }

@@ -2,13 +2,49 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.dashboard-body {
+  color: white;
+
+}
+
+.grey-box {
+  margin: 0.5rem 0 1rem 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  background-color: #7f8689;
+  height: 45vh; 
+}
+
+.time-cal {
+  margin-top: 50px;
+}
+
+#calendar {
+  margin-top: 2vh;
+}
+
+table {
+  clear: left;
+}
+
+.deck-lk {
+  font-size: 2.5rem;
+  position: relative;
+  top: .25em;
+}
+
+.job-description {
+  font-size: 1.5rem;
+  color: #26a69a;
+}
 
 
 #current-time {
   width:120px;
   height:120px;
   position:relative;
-  margin:50px 40px 0 40px;
   float:left;
   background:#23b49a;
   border:8px solid #ffffff;
@@ -16,21 +52,24 @@
   box-shadow:0 10px 20px 0 rgba(0,0,0,0.2),
              0 1px 1px 0 rgba(0,0,0,0.8),
              0 10px 40px 0 rgba(0,0,0,0.1);
+
+  margin-top: 3.2vh;
+  margin-left: 3vh;           
 }
 
 //THESE BEFORE AND AFTER LAYERS ARE SHOWING ON MAIN PAGE
-current-time:before, current-time:after{
+.current-time:before, current-time:after{
   content:" ";
   position:absolute;
   width:3px;
   height:10px;
-  background:#ffffff;
+  background: #ffffff;
   box-shadow:0 2px 1px -1px rgba(0,0,0,0.8);
   top:-5px;
   margin-top:50%;
 }
 
-current-time:after{
+.current-time:after{
   right:0;
 }
 
@@ -62,7 +101,7 @@ current-time:after{
  }
 
 //This makes the shadow on top
-time:first-of-type:after{
+.time:first-of-type:after{
   content:" ";
   width:103px;
   height:51px;
@@ -86,7 +125,9 @@ time:first-of-type:after{
   padding:0;
 }
 
-
+#add-new-job {
+  margin: .5em;
+}
 
 
 

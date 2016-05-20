@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'dashboard/deck/new' => 'deck#new'
   get 'dashboard/deck/:id' => 'deck#show'
   put 'dashboard/deck/:id' => 'deck#update'
+  post 'dashboard/deck' => 'deck#create'
 
   get 'auth/login' => 'auth#login'
   get 'auth/logout' => 'auth#logout'

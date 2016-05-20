@@ -15,16 +15,16 @@ class DashboardController < ApplicationController
 
   def show
     @jobs = Job.all
-    @job = Job.where(user_id: 2)
+    # @job = Job.where(user_id: session[:user_id])
+    @job = Job.where(user_id: 1)
     @company = Company.all
-
 
     #Call API using session[:access_token] in the request HTTP header
 
     email = session[:email]
     timeMin = Time.now.iso8601
     maxResults = 10
-    encoded_url = URI.encode('https://www.googleapis.com/calendar/v3/calendars/drewrudebusch@gmail.com/events?timeMin=2016-05-09T10:00:00-07:00')
+    encoded_url = URI.encode('https://www.googleapis.com/calendar/v3/calendars/'+email+'/events?timeMin='+ timeMin) 
 
     puts "About to make call to Google Calendar API...Hooray!!!"
 
@@ -35,36 +35,23 @@ class DashboardController < ApplicationController
 
     @response = JSON.parse(response)
     puts "Calendar API response"
-    puts @response['summary']
+    # puts @response
 
-      ###  Writes results to console ###
-      puts @response['summary']
-      puts "Upcoming events:"
-      puts "No upcoming events found"
+      ###  Writes results to console ### my email
+      # puts @response['summary']
 
-    if @response['items'].empty?
+
+    # if @response['items'].empty?
       ### This is the data that the controller would need to return and pass into views
       @result = @response['items']
-       
-        @response.items.each do |event|
-          @start = event.start.date
-          @time = event.start.date_time
-          @appointment = event.summary
-          puts "- #{event.summary} (#{@start})"
-          puts "-#{event.start.date}"
+    
+        @response['items'].each do |event|
+          @event_name =  event['summary']
+          @location = event['location']
+          @appointment = event['start']['dateTime']
+
         end
     end
-
-  end
-
-#            <% @result.each do |event| %>
-#             <% @dt = event.start.date_time  %>
-#               <td><%= @dt.strftime('%B %d, %Y')%></td>
-#               <td><%= @dt.strftime('%I:%M %p') %></td> 
-#               <td><%= event.summary %></td>
-#               <td><%= event.location %></td>
-#             <%end%>
-  
 
   def new
      @job = Job.new
